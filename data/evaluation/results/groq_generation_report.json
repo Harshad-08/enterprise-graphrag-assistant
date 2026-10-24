@@ -1,0 +1,2782 @@
+{
+  "generated_at": "2026-10-24T14:07:12.563220+00:00",
+  "dataset": "eval_dataset.json",
+  "item_count": 28,
+  "configurations": [
+    "baseline",
+    "improved"
+  ],
+  "environment": {
+    "llm_provider": "groq:openai/gpt-oss-120b",
+    "mock_mode": false,
+    "graph_backend": "neo4j",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "verifier": "nli",
+    "sufficiency_threshold": 0.75,
+    "min_chunk_relevance": 0.5,
+    "min_concept_coverage": 0.5,
+    "recovery_max_attempts": 2,
+    "final_top_k": 6
+  },
+  "custom_metrics": {
+    "baseline": {
+      "items": 28,
+      "errors": 0,
+      "retrieval_recall_at_k": 0.95,
+      "recovery_trigger_count": 0,
+      "recovery_success_rate": null,
+      "expected_recovery_hit_rate": 1.0,
+      "citation_validity_rate": 1.0,
+      "claim_support_rate": 0.4595,
+      "unsupported_answer_rate": 0.5238,
+      "abstention_precision": 1.0,
+      "abstention_recall": 0.875,
+      "false_abstention_rate": 0.0,
+      "expected_fact_recall": 0.7778,
+      "stale_answer_rate": 0.2,
+      "query_conflict_handling_accuracy": 0.0,
+      "mean_latency_ms": 3286.7
+    },
+    "improved": {
+      "items": 28,
+      "errors": 0,
+      "retrieval_recall_at_k": 1.0,
+      "recovery_trigger_count": 11,
+      "recovery_success_rate": 1.0,
+      "expected_recovery_hit_rate": 1.0,
+      "citation_validity_rate": 1.0,
+      "claim_support_rate": 1.0,
+      "unsupported_answer_rate": 0.0,
+      "abstention_precision": 1.0,
+      "abstention_recall": 1.0,
+      "false_abstention_rate": 0.0,
+      "expected_fact_recall": 1.0,
+      "stale_answer_rate": 0.0,
+      "query_conflict_handling_accuracy": 1.0,
+      "mean_latency_ms": 6661.7
+    }
+  },
+  "custom_metrics_by_category": {
+    "baseline": {
+      "answerable": {
+        "items": 8,
+        "errors": 0,
+        "retrieval_recall_at_k": 1.0,
+        "recovery_trigger_count": 0,
+        "recovery_success_rate": null,
+        "expected_recovery_hit_rate": null,
+        "citation_validity_rate": 1.0,
+        "claim_support_rate": 0.75,
+        "unsupported_answer_rate": 0.25,
+        "abstention_precision": null,
+        "abstention_recall": null,
+        "false_abstention_rate": 0.0,
+        "expected_fact_recall": 0.8571,
+        "stale_answer_rate": null,
+        "query_conflict_handling_accuracy": 0.0,
+        "mean_latency_ms": 4101.6
+      },
+      "compatible_conditions": {
+        "items": 1,
+        "errors": 0,
+        "retrieval_recall_at_k": 1.0,
+        "recovery_trigger_count": 0,
+        "recovery_success_rate": null,
+        "expected_recovery_hit_rate": null,
+        "citation_validity_rate": 1.0,
+        "claim_support_rate": 1.0,
+        "unsupported_answer_rate": 0.0,
+        "abstention_precision": null,
+        "abstention_recall": null,
+        "false_abstention_rate": 0.0,
+        "expected_fact_recall": 1.0,
+        "stale_answer_rate": null,
+        "query_conflict_handling_accuracy": null,
+        "mean_latency_ms": 6345.3
+      },
+      "conflict_resolved": {
+        "items": 4,
+        "errors": 0,
+        "retrieval_recall_at_k": 1.0,
+        "recovery_trigger_count": 0,
+        "recovery_success_rate": null,
+        "expected_recovery_hit_rate": null,
+        "citation_validity_rate": 1.0,
+        "claim_support_rate": 0.3333,
+        "unsupported_answer_rate": 0.5,
+        "abstention_precision": null,
+        "abstention_recall": null,
+        "false_abstention_rate": 0.0,
+        "expected_fact_recall": 0.5,
+        "stale_answer_rate": 0.25,
+        "query_conflict_handling_accuracy": 0.0,
+        "mean_latency_ms": 956.5
+      },
+      "conflict_unresolved": {
+        "items": 1,
+        "errors": 0,
+        "retrieval_recall_at_k": 1.0,
+        "recovery_trigger_count": 0,
+        "recovery_success_rate": null,
+        "expected_recovery_hit_rate": null,
+        "citation_validity_rate": 1.0,
+        "claim_support_rate": 0.0,
+        "unsupported_answer_rate": 1.0,
+        "abstention_precision": null,
+        "abstention_recall": null,
+        "false_abstention_rate": 0.0,
+        "expected_fact_recall": 1.0,
+        "stale_answer_rate": null,
+        "query_conflict_handling_accuracy": 0.0,
+        "mean_latency_ms": 956.9
+      },
+      "graph_recovery": {
+        "items": 2,
+        "errors": 0,
+        "retrieval_recall_at_k": 1.0,
+        "recovery_trigger_count": 0,
+        "recovery_success_rate": null,
+        "expected_recovery_hit_rate": 1.0,
+        "citation_validity_rate": 1.0,
+        "claim_support_rate": 0.5,
+        "unsupported_answer_rate": 1.0,
+        "abstention_precision": null,
+        "abstention_recall": null,
+        "false_abstention_rate": 0.0,
+        "expected_fact_recall": 1.0,
+        "stale_answer_rate": null,
+        "query_conflict_handling_accuracy": null,
+        "mean_latency_ms": 888.1
+      },
+      "multi_hop": {
+        "items": 3,
+        "errors": 0,
+        "retrieval_recall_at_k": 0.6667,
+        "recovery_trigger_count": 0,
+        "recovery_success_rate": null,
+        "expected_recovery_hit_rate": null,
+        "citation_validity_rate": 1.0,
+        "claim_support_rate": 0.3333,
+        "unsupported_answer_rate": 1.0,
+        "abstention_precision": null,
+        "abstention_recall": null,
+        "false_abstention_rate": 0.0,
+        "expected_fact_recall": 0.0,
+        "stale_answer_rate": null,
+        "query_conflict_handling_accuracy": null,
+        "mean_latency_ms": 866.1
+      },
+      "query_expansion": {
+        "items": 1,
+        "errors": 0,
+        "retrieval_recall_at_k": 1.0,
+        "recovery_trigger_count": 0,
+        "recovery_success_rate": null,
+        "expected_recovery_hit_rate": null,
+        "citation_validity_rate": 1.0,
+        "claim_support_rate": 1.0,
+        "unsupported_answer_rate": 0.0,
+        "abstention_precision": null,
+        "abstention_recall": null,
+        "false_abstention_rate": 0.0,
+        "expected_fact_recall": 1.0,
+        "stale_answer_rate": 0.0,
+        "query_conflict_handling_accuracy": 0.0,
+        "mean_latency_ms": 4745.0
+      },
+      "unanswerable": {
+        "items": 4,
+        "errors": 0,
+        "retrieval_recall_at_k": null,
+        "recovery_trigger_count": 0,
+        "recovery_success_rate": null,
+        "expected_recovery_hit_rate": null,
+        "citation_validity_rate": null,
+        "claim_support_rate": null,
+        "unsupported_answer_rate": null,
+        "abstention_precision": 1.0,
+        "abstention_recall": 1.0,
+        "false_abstention_rate": null,
+        "expected_fact_recall": null,
+        "stale_answer_rate": null,
+        "query_conflict_handling_accuracy": null,
+        "mean_latency_ms": 4163.1
+      },
+      "unsupported_trigger": {
+        "items": 4,
+        "errors": 0,
+        "retrieval_recall_at_k": null,
+        "recovery_trigger_count": 0,
+        "recovery_success_rate": null,
+        "expected_recovery_hit_rate": null,
+        "citation_validity_rate": null,
+        "claim_support_rate": 0.0,
+        "unsupported_answer_rate": 1.0,
+        "abstention_precision": 1.0,
+        "abstention_recall": 0.75,
+        "false_abstention_rate": null,
+        "expected_fact_recall": null,
+        "stale_answer_rate": null,
+        "query_conflict_handling_accuracy": null,
+        "mean_latency_ms": 5578.9
+      }
+    },
+    "improved": {
+      "answerable": {
+        "items": 8,
+        "errors": 0,
+        "retrieval_recall_at_k": 1.0,
+        "recovery_trigger_count": 1,
+        "recovery_success_rate": 1.0,
+        "expected_recovery_hit_rate": null,
+        "citation_validity_rate": 1.0,
+        "claim_support_rate": 1.0,
+        "unsupported_answer_rate": 0.0,
+        "abstention_precision": null,
+        "abstention_recall": null,
+        "false_abstention_rate": 0.0,
+        "expected_fact_recall": 1.0,
+        "stale_answer_rate": null,
+        "query_conflict_handling_accuracy": 1.0,
+        "mean_latency_ms": 9109.2
+      },
+      "compatible_conditions": {
+        "items": 1,
+        "errors": 0,
+        "retrieval_recall_at_k": 1.0,
+        "recovery_trigger_count": 0,
+        "recovery_success_rate": null,
+        "expected_recovery_hit_rate": null,
+        "citation_validity_rate": 1.0,
+        "claim_support_rate": 1.0,
+        "unsupported_answer_rate": 0.0,
+        "abstention_precision": null,
+        "abstention_recall": null,
+        "false_abstention_rate": 0.0,
+        "expected_fact_recall": 1.0,
+        "stale_answer_rate": null,
+        "query_conflict_handling_accuracy": null,
+        "mean_latency_ms": 1287.5
+      },
+      "conflict_resolved": {
+        "items": 4,
+        "errors": 0,
+        "retrieval_recall_at_k": 1.0,
+        "recovery_trigger_count": 0,
+        "recovery_success_rate": null,
+        "expected_recovery_hit_rate": null,
+        "citation_validity_rate": 1.0,
+        "claim_support_rate": 1.0,
+        "unsupported_answer_rate": 0.0,
+        "abstention_precision": null,
+        "abstention_recall": null,
+        "false_abstention_rate": 0.0,
+        "expected_fact_recall": 1.0,
+        "stale_answer_rate": 0.0,
+        "query_conflict_handling_accuracy": 1.0,
+        "mean_latency_ms": 6644.1
+      },
+      "conflict_unresolved": {
+        "items": 1,
+        "errors": 0,
+        "retrieval_recall_at_k": 1.0,
+        "recovery_trigger_count": 0,
+        "recovery_success_rate": null,
+        "expected_recovery_hit_rate": null,
+        "citation_validity_rate": 1.0,
+        "claim_support_rate": 1.0,
+        "unsupported_answer_rate": 0.0,
+        "abstention_precision": null,
+        "abstention_recall": null,
+        "false_abstention_rate": 0.0,
+        "expected_fact_recall": 1.0,
+        "stale_answer_rate": null,
+        "query_conflict_handling_accuracy": 1.0,
+        "mean_latency_ms": 8288.3
+      },
+      "graph_recovery": {
+        "items": 2,
+        "errors": 0,
+        "retrieval_recall_at_k": 1.0,
+        "recovery_trigger_count": 2,
+        "recovery_success_rate": 1.0,
+        "expected_recovery_hit_rate": 1.0,
+        "citation_validity_rate": 1.0,
+        "claim_support_rate": 1.0,
+        "unsupported_answer_rate": 0.0,
+        "abstention_precision": null,
+        "abstention_recall": null,
+        "false_abstention_rate": 0.0,
+        "expected_fact_recall": 1.0,
+        "stale_answer_rate": null,
+        "query_conflict_handling_accuracy": null,
+        "mean_latency_ms": 11705.1
+      },
+      "multi_hop": {
+        "items": 3,
+        "errors": 0,
+        "retrieval_recall_at_k": 1.0,
+        "recovery_trigger_count": 0,
+        "recovery_success_rate": null,
+        "expected_recovery_hit_rate": null,
+        "citation_validity_rate": 1.0,
+        "claim_support_rate": 1.0,
+        "unsupported_answer_rate": 0.0,
+        "abstention_precision": null,
+        "abstention_recall": null,
+        "false_abstention_rate": 0.0,
+        "expected_fact_recall": 1.0,
+        "stale_answer_rate": null,
+        "query_conflict_handling_accuracy": null,
+        "mean_latency_ms": 13913.3
+      },
+      "query_expansion": {
+        "items": 1,
+        "errors": 0,
+        "retrieval_recall_at_k": 1.0,
+        "recovery_trigger_count": 0,
+        "recovery_success_rate": null,
+        "expected_recovery_hit_rate": null,
+        "citation_validity_rate": 1.0,
+        "claim_support_rate": 1.0,
+        "unsupported_answer_rate": 0.0,
+        "abstention_precision": null,
+        "abstention_recall": null,
+        "false_abstention_rate": 0.0,
+        "expected_fact_recall": 1.0,
+        "stale_answer_rate": 0.0,
+        "query_conflict_handling_accuracy": 1.0,
+        "mean_latency_ms": 8368.5
+      },
+      "unanswerable": {
+        "items": 4,
+        "errors": 0,
+        "retrieval_recall_at_k": null,
+        "recovery_trigger_count": 4,
+        "recovery_success_rate": null,
+        "expected_recovery_hit_rate": null,
+        "citation_validity_rate": null,
+        "claim_support_rate": null,
+        "unsupported_answer_rate": null,
+        "abstention_precision": 1.0,
+        "abstention_recall": 1.0,
+        "false_abstention_rate": null,
+        "expected_fact_recall": null,
+        "stale_answer_rate": null,
+        "query_conflict_handling_accuracy": null,
+        "mean_latency_ms": 403.0
+      },
+      "unsupported_trigger": {
+        "items": 4,
+        "errors": 0,
+        "retrieval_recall_at_k": null,
+        "recovery_trigger_count": 4,
+        "recovery_success_rate": null,
+        "expected_recovery_hit_rate": null,
+        "citation_validity_rate": null,
+        "claim_support_rate": null,
+        "unsupported_answer_rate": null,
+        "abstention_precision": 1.0,
+        "abstention_recall": 1.0,
+        "false_abstention_rate": null,
+        "expected_fact_recall": null,
+        "stale_answer_rate": null,
+        "query_conflict_handling_accuracy": null,
+        "mean_latency_ms": 592.5
+      }
+    }
+  },
+  "corpus_conflict_metrics": {
+    "detection": {
+      "true_positives": 4,
+      "detected_pairs": 4,
+      "gold_pairs": 4,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "resolution_accuracy": 1.0,
+    "compatible_pairs_flagged_as_contradiction": 0,
+    "detected_conflicts": [
+      {
+        "documents": [
+          "HR-POL-007",
+          "HR-POL-007-V1"
+        ],
+        "subject": "Remote Work",
+        "property": "remote_work_days",
+        "resolved": true,
+        "winner_document_id": "HR-POL-007",
+        "rule": "supersession",
+        "method": "structured"
+      },
+      {
+        "documents": [
+          "HR-POL-007",
+          "HR-POL-007-V1"
+        ],
+        "subject": "Personal Devices",
+        "property": "remote_access",
+        "resolved": true,
+        "winner_document_id": "HR-POL-007",
+        "rule": "supersession",
+        "method": "structured"
+      },
+      {
+        "documents": [
+          "SEC-GDL-009",
+          "IT-STD-015"
+        ],
+        "subject": "VPN Sessions",
+        "property": "session_timeout",
+        "resolved": false,
+        "winner_document_id": null,
+        "rule": null,
+        "method": "structured"
+      },
+      {
+        "documents": [
+          "SRE-STD-010",
+          "LEG-POL-003"
+        ],
+        "subject": "Application Logs",
+        "property": "retention_period",
+        "resolved": true,
+        "winner_document_id": "LEG-POL-003",
+        "rule": "authority",
+        "method": "structured"
+      }
+    ]
+  },
+  "ragas": {
+    "status": "not_requested",
+    "reason": "include_ragas=false"
+  },
+  "notes": [
+    "Claim support and unsupported-answer rates are judged by the configured verifier ('nli'), which the improved pipeline also uses internally; this favours the improved configuration. Ragas Faithfulness (when available) is an independent LLM judge.",
+    "Corpus-level contradiction metrics describe the ingestion-time detector; the baseline has no conflict mechanism, so query-level conflict handling scores 0 for it by construction."
+  ],
+  "items": [
+    {
+      "item_id": "Q01",
+      "category": "answerable",
+      "configuration": "baseline",
+      "question": "What is the company's work-from-home policy?",
+      "answer": "Employees may work from home up to 3 days per week with manager approval, must be available during core hours 10:00\u201115:00 local time on remote days, and working from outside the home country requires prior HR approval and is limited to 30 days per year. [1]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "HR-POL-007"
+      ],
+      "retrieved_doc_ids": [
+        "HR-POL-007-V1",
+        "HR-POL-007"
+      ],
+      "contexts": [
+        "Employees may work from home up to 2 days per week with manager approval.",
+        "This policy sets out the rules for employees who work from home.",
+        "This policy depends on the Information Security Policy.",
+        "This policy defines how employees may work from home and connect to company resources. It replaces version 1.0 of the Remote Work Policy, which is no longer in force.",
+        "Employees may work from home up to 3 days per week with manager approval. Employees must be available during core hours from 10:00 to 15:00 local time on remote days. Working from outside the home country requires prior approval from Human Resources and is limited to 30 days per year.",
+        "Employees may use personal devices for remote access to internal systems. Remote connections must use the Corporate VPN."
+      ],
+      "reference": "Under the Remote Work Policy v2.0 (HR-POL-007, which supersedes v1.0), employees may work from home up to 3 days per week with manager approval, must use a company-managed laptop, may not use personal devices for remote access to internal systems, and must connect through the Corporate VPN with multi-factor authentication.",
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": "resolved:HR-POL-007",
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 1,
+      "citations_valid": 1,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 1204.9,
+      "error": null
+    },
+    {
+      "item_id": "Q02",
+      "category": "conflict_resolved",
+      "configuration": "baseline",
+      "question": "How many days per week can employees work from home?",
+      "answer": "Employees can work from home up to 3 days per week. [1]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "HR-POL-007"
+      ],
+      "retrieved_doc_ids": [
+        "HR-POL-007-V1",
+        "HR-POL-007"
+      ],
+      "contexts": [
+        "Employees may work from home up to 2 days per week with manager approval.",
+        "Employees may work from home up to 3 days per week with manager approval. Employees must be available during core hours from 10:00 to 15:00 local time on remote days. Working from outside the home country requires prior approval from Human Resources and is limited to 30 days per year.",
+        "This policy sets out the rules for employees who work from home.",
+        "Employees must use a company-managed laptop for all remote work. Personal devices are prohibited for remote access to internal systems. All remote connections must use the Corporate VPN with multi-factor authentication.",
+        "This policy defines how employees may work from home and connect to company resources. It replaces version 1.0 of the Remote Work Policy, which is no longer in force.",
+        "Employees may use personal devices for remote access to internal systems. Remote connections must use the Corporate VPN."
+      ],
+      "reference": "Employees may work from home up to 3 days per week with manager approval (HR-POL-007 v2.0). The older 2-day limit in v1.0 is superseded.",
+      "expected_facts": [
+        "3 days per week"
+      ],
+      "stale_facts": [
+        "2 days per week"
+      ],
+      "expected_conflict": "resolved:HR-POL-007",
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 1,
+      "citations_valid": 1,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 692.5,
+      "error": null
+    },
+    {
+      "item_id": "Q03",
+      "category": "conflict_resolved",
+      "configuration": "baseline",
+      "question": "Can employees use personal devices for remote access to internal systems?",
+      "answer": "The superseded Remote Work Policy version 1.0 (E1) allowed employees to use personal devices for remote access to internal systems. [1] The active Remote Work Policy version 2.0 (E2) requires employees to use a company\u2011managed laptop for all remote work and prohibits personal devices for remote access to internal systems. [2] The active Remote Access Standard (E3) permits personal devices for remote access only when accessing the webmail portal through a browser. [3]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "HR-POL-007"
+      ],
+      "retrieved_doc_ids": [
+        "HR-POL-007-V1",
+        "HR-POL-007",
+        "IT-STD-015"
+      ],
+      "contexts": [
+        "Employees may use personal devices for remote access to internal systems. Remote connections must use the Corporate VPN.",
+        "Employees must use a company-managed laptop for all remote work. Personal devices are prohibited for remote access to internal systems. All remote connections must use the Corporate VPN with multi-factor authentication.",
+        "Personal devices are permitted for remote access only when accessing the webmail portal through a browser.",
+        "Employees may work from home up to 2 days per week with manager approval.",
+        "This policy sets out the rules for employees who work from home.",
+        "This policy depends on the Information Security Policy."
+      ],
+      "reference": "No. The current Remote Work Policy (HR-POL-007) prohibits personal devices for remote access to internal systems; the permissive rule in v1.0 is superseded.",
+      "expected_facts": [
+        "prohibited"
+      ],
+      "stale_facts": [
+        "may use personal devices"
+      ],
+      "expected_conflict": "resolved:HR-POL-007",
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 3,
+      "citations_valid": 3,
+      "claims_total": 3,
+      "claims_supported": 0,
+      "latency_ms": 982.8,
+      "error": null
+    },
+    {
+      "item_id": "Q04",
+      "category": "conflict_resolved",
+      "configuration": "baseline",
+      "question": "Two documents give different rules for using personal devices for remote access. Which policy is applicable?",
+      "answer": "The applicable policy is the active Remote Work Policy version 2.0 (effective 2024-03-01), which requires employees to use a company\u2011managed laptop and prohibits personal devices for remote access to internal systems. [1][2] The earlier Remote Work Policy version 1.0 (E3) that permitted personal devices is superseded and no longer in force. [3][2] Although the Remote Access Standard (E4) permits personal devices for webmail access, the higher\u2011level Remote Work Policy overrides it for general remote access. [4][1]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "HR-POL-007"
+      ],
+      "retrieved_doc_ids": [
+        "HR-POL-007",
+        "HR-POL-007-V1",
+        "IT-STD-015"
+      ],
+      "contexts": [
+        "This policy depends on the Information Security Policy.",
+        "Employees must use a company-managed laptop for all remote work. Personal devices are prohibited for remote access to internal systems. All remote connections must use the Corporate VPN with multi-factor authentication.",
+        "Employees may use personal devices for remote access to internal systems. Remote connections must use the Corporate VPN.",
+        "Personal devices are permitted for remote access only when accessing the webmail portal through a browser.",
+        "This policy sets out the rules for employees who work from home.",
+        "This policy defines how employees may work from home and connect to company resources. It replaces version 1.0 of the Remote Work Policy, which is no longer in force."
+      ],
+      "reference": "The Remote Work Policy v2.0 (HR-POL-007) applies because it explicitly supersedes v1.0 (HR-POL-007-V1); personal devices are prohibited for remote access to internal systems.",
+      "expected_facts": [
+        "HR-POL-007"
+      ],
+      "stale_facts": [
+        "may use personal devices"
+      ],
+      "expected_conflict": "resolved:HR-POL-007",
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 6,
+      "citations_valid": 6,
+      "claims_total": 3,
+      "claims_supported": 0,
+      "latency_ms": 1403.1,
+      "error": null
+    },
+    {
+      "item_id": "Q05",
+      "category": "conflict_unresolved",
+      "configuration": "baseline",
+      "question": "What is the inactivity timeout for VPN sessions?",
+      "answer": "The Remote Access Standard specifies that VPN sessions are disconnected after 60 minutes of inactivity. [1] The Network Security Guidelines specify that VPN sessions must be disconnected after 15 minutes of inactivity. [2]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "IT-STD-015",
+        "SEC-GDL-009"
+      ],
+      "retrieved_doc_ids": [
+        "IT-STD-015",
+        "SEC-GDL-009",
+        "TECH-API-002",
+        "HR-POL-007",
+        "HR-POL-007-V1"
+      ],
+      "contexts": [
+        "VPN sessions are disconnected after 60 minutes of inactivity. The Corporate VPN client must be updated within 14 days of a new release.",
+        "VPN sessions must be disconnected after 15 minutes of inactivity. Split tunnelling is not permitted on corporate VPN connections.",
+        "Each client is limited to 600 requests per minute by default.",
+        "Employees may work from home up to 3 days per week with manager approval. Employees must be available during core hours from 10:00 to 15:00 local time on remote days. Working from outside the home country requires prior approval from Human Resources and is limited to 30 days per year.",
+        "Employees may use personal devices for remote access to internal systems. Remote connections must use the Corporate VPN.",
+        "Employees may work from home up to 2 days per week with manager approval."
+      ],
+      "reference": "The sources conflict: the Remote Access Standard (IT-STD-015) says VPN sessions disconnect after 60 minutes of inactivity, while the Network Security Guidelines (SEC-GDL-009) say 15 minutes. Precedence cannot be established from the metadata.",
+      "expected_facts": [
+        "60 minutes",
+        "15 minutes"
+      ],
+      "stale_facts": [],
+      "expected_conflict": "unresolved",
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 2,
+      "citations_valid": 2,
+      "claims_total": 2,
+      "claims_supported": 0,
+      "latency_ms": 956.9,
+      "error": null
+    },
+    {
+      "item_id": "Q06",
+      "category": "conflict_resolved",
+      "configuration": "baseline",
+      "question": "How long must application logs be retained?",
+      "answer": "Application logs must be retained for 90 days. [1] Application logs must be retained for 12 months. [2]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "LEG-POL-003"
+      ],
+      "retrieved_doc_ids": [
+        "SRE-STD-010",
+        "LEG-POL-003"
+      ],
+      "contexts": [
+        "All services must send application logs to the central logging platform. Application logs are retained for 90 days and then deleted. Logs must not contain passwords, access tokens or payment card numbers.",
+        "Customer data must be retained for 7 years after the end of the customer contract. Application logs must be retained for 12 months. Database backups must be retained for no longer than 35 days. Financial records must be retained for 10 years.",
+        "Customer deletion requests must be completed within 30 days of verification. Data that has reached the end of its retention period must be securely deleted.",
+        "This policy defines how long the company keeps business records and when they are deleted.",
+        "Every production service must define availability alerts before launch.",
+        "This standard applies to all services running on production systems."
+      ],
+      "reference": "Application logs must be retained for 12 months under the Data Retention Policy (LEG-POL-003), which has higher authority than the Logging and Monitoring Standard's 90-day rule.",
+      "expected_facts": [
+        "12 months"
+      ],
+      "stale_facts": [
+        "90 days"
+      ],
+      "expected_conflict": "resolved:LEG-POL-003",
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 2,
+      "citations_valid": 2,
+      "claims_total": 2,
+      "claims_supported": 2,
+      "latency_ms": 747.6,
+      "error": null
+    },
+    {
+      "item_id": "Q07",
+      "category": "multi_hop",
+      "configuration": "baseline",
+      "question": "Which security policies govern production database access?",
+      "answer": "Production database access is governed by the Production Database Access Standard, which implements the Information Security Policy for database workloads. [1] The overarching Information Security Policy also governs access to production systems, including production databases. [2][3]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "SEC-STD-004",
+        "SEC-POL-001"
+      ],
+      "retrieved_doc_ids": [
+        "SEC-STD-004",
+        "SEC-POL-001",
+        "ORG-REG-001"
+      ],
+      "contexts": [
+        "This standard governs human access to every production database. This standard implements the Information Security Policy for database workloads.",
+        "Production database accounts are read-only by default. Write access requires an approved change ticket and expires after 4 hours. All production database sessions are recorded and retained for audit. Production database access is reviewed quarterly by Information Security.",
+        "Access to production systems must follow the principle of least privilege. Multi-factor authentication is required for all access to production systems. User access to production systems must be reviewed quarterly by the system owner. Shared accounts are prohibited on production systems.",
+        "Access to a production database requires an approved access request in ServiceDesk. Multi-factor authentication is required for every production database session. Engineers must connect to a production database only through the Bastion Host. Direct connections from laptops to a production database are prohibited.",
+        "Human Resources owns the Remote Work Policy. Information Security owns the Information Security Policy, the Production Database Access Standard and the Network Security Guidelines. Platform Engineering owns the API Authentication Standard. Legal & Compliance owns the Data Retention Policy. Site Reliability Engineering owns the Logging and Monitoring Standard. IT Operations owns the Remote Access Standard.",
+        "This policy establishes the baseline security requirements for all employees and contractors. This policy governs all production systems and the Customer Data Platform."
+      ],
+      "reference": "The Production Database Access Standard (SEC-STD-004) governs production database access and implements the Information Security Policy (SEC-POL-001).",
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 3,
+      "citations_valid": 3,
+      "claims_total": 2,
+      "claims_supported": 1,
+      "latency_ms": 701.4,
+      "error": null
+    },
+    {
+      "item_id": "Q08",
+      "category": "multi_hop",
+      "configuration": "baseline",
+      "question": "Which procedure depends on the API authentication policy?",
+      "answer": "No procedure is identified in the provided context as depending on the API authentication policy.",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "PROC-PART-003"
+      ],
+      "retrieved_doc_ids": [
+        "TECH-API-002",
+        "SEC-POL-001",
+        "HR-POL-007"
+      ],
+      "contexts": [
+        "This standard governs authentication for every service exposed through the Public API Gateway. This standard implements the credential requirements of the Information Security Policy.",
+        "Each client is limited to 600 requests per minute by default.",
+        "All API clients must authenticate with OAuth 2.0 using the client credentials flow. Access tokens expire after 60 minutes. Static API keys are prohibited for new integrations. Client secrets must be rotated every 90 days. Partner integrations must use mutual TLS in addition to OAuth 2.0.",
+        "Passwords must contain at least 14 characters. Client secrets must be stored in the approved secrets manager and must never be committed to source code.",
+        "Customer data must be encrypted at rest and in transit.",
+        "This policy depends on the Information Security Policy."
+      ],
+      "reference": "The Partner Integration Onboarding Procedure (PROC-PART-003) depends on the API Authentication Standard (TECH-API-002).",
+      "expected_facts": [
+        "procedure depends on the API Authentication Standard"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 0,
+      "citations_valid": 0,
+      "claims_total": 1,
+      "claims_supported": 0,
+      "latency_ms": 756.4,
+      "error": null
+    },
+    {
+      "item_id": "Q09",
+      "category": "multi_hop",
+      "configuration": "baseline",
+      "question": "What security requirements apply to a production system, and which documents establish those requirements?",
+      "answer": "Access to production systems must follow the principle of least privilege, require multi-factor authentication, be reviewed quarterly, and prohibit shared accounts. [1] Access to a production database requires an approved request in ServiceDesk, multi-factor authentication for every session, connection only through the Bastion Host, and prohibits direct laptop connections. [2] Production systems must be isolated from the office network. [3] The Information Security Policy establishes baseline security requirements for all production systems. [4] The Production Database Access Standard implements the Information Security Policy for database workloads and governs human access to production databases. [5] The Network Security Guidelines describe baseline network protections and include requirements for network segmentation of production systems. [6]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "SEC-POL-001"
+      ],
+      "retrieved_doc_ids": [
+        "SEC-POL-001",
+        "SEC-STD-004",
+        "SEC-GDL-009"
+      ],
+      "contexts": [
+        "Access to production systems must follow the principle of least privilege. Multi-factor authentication is required for all access to production systems. User access to production systems must be reviewed quarterly by the system owner. Shared accounts are prohibited on production systems.",
+        "Access to a production database requires an approved access request in ServiceDesk. Multi-factor authentication is required for every production database session. Engineers must connect to a production database only through the Bastion Host. Direct connections from laptops to a production database are prohibited.",
+        "This standard governs human access to every production database. This standard implements the Information Security Policy for database workloads.",
+        "Production systems must be isolated from the office network.",
+        "These guidelines describe baseline network protections for corporate and remote connections.",
+        "This policy establishes the baseline security requirements for all employees and contractors. This policy governs all production systems and the Customer Data Platform."
+      ],
+      "reference": "The Information Security Policy (SEC-POL-001) requires least privilege, multi-factor authentication for all access to production systems, quarterly access reviews and prohibits shared accounts.",
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 6,
+      "citations_valid": 6,
+      "claims_total": 6,
+      "claims_supported": 2,
+      "latency_ms": 1140.4,
+      "error": null
+    },
+    {
+      "item_id": "Q10",
+      "category": "graph_recovery",
+      "configuration": "baseline",
+      "question": "What are the access requirements for the Atlas cluster?",
+      "answer": "Access to the Atlas cluster requires an approved access request in ServiceDesk, multi-factor authentication for every session, and connections must be made through the Bastion Host; direct laptop connections are prohibited. [1]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "SEC-STD-004"
+      ],
+      "retrieved_doc_ids": [
+        "TECH-DB-002",
+        "ORG-REG-001",
+        "SEC-STD-004"
+      ],
+      "contexts": [
+        "Atlas is a production database cluster that stores customer orders for the Order Management Service. The Atlas Cluster runs PostgreSQL 15 across three availability zones. Platform Engineering owns the Atlas Cluster.",
+        "Atlas uses one primary node and two synchronous replicas. Failover to a replica completes in under 60 seconds. Connection pooling for Atlas is handled by PgBouncer.",
+        "Platform Engineering owns the Atlas Cluster, the Public API Gateway and the Customer Data Platform. IT Operations owns the Corporate VPN and the Identity Provider. Information Security owns the Bastion Host.",
+        "Access to a production database requires an approved access request in ServiceDesk. Multi-factor authentication is required for every production database session. Engineers must connect to a production database only through the Bastion Host. Direct connections from laptops to a production database are prohibited.",
+        "Atlas metrics are exported to the central monitoring stack. Site Reliability Engineering is paged when replication lag exceeds 30 seconds.",
+        "Atlas backups are taken nightly and kept for 35 days. Point-in-time recovery is available for the previous 7 days."
+      ],
+      "reference": "Atlas is a production database, so the Production Database Access Standard (SEC-STD-004) applies: an approved access request in ServiceDesk, multi-factor authentication, connection only through the Bastion Host, read-only accounts by default, and write access only with an approved change ticket (expiring after 4 hours).",
+      "expected_facts": [
+        "access request"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": true,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 1,
+      "citations_valid": 1,
+      "claims_total": 1,
+      "claims_supported": 0,
+      "latency_ms": 741.7,
+      "error": null
+    },
+    {
+      "item_id": "Q11",
+      "category": "graph_recovery",
+      "configuration": "baseline",
+      "question": "What controls apply before an engineer can work on the orders database?",
+      "answer": "Engineers must have an approved access request in ServiceDesk before connecting to any production database. [1] Multi-factor authentication is required for every production database session. [1][2] Engineers must connect to the production database only through the Bastion Host; direct laptop connections are prohibited. [1] Write access to the production (orders) database requires an approved change ticket and is limited to a 4\u2011hour window. [3] All production database sessions are recorded and retained for audit, and access is reviewed quarterly by Information Security. [3][2]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "SEC-STD-004"
+      ],
+      "retrieved_doc_ids": [
+        "SEC-STD-004",
+        "SEC-POL-001",
+        "ORG-REG-001"
+      ],
+      "contexts": [
+        "Production database accounts are read-only by default. Write access requires an approved change ticket and expires after 4 hours. All production database sessions are recorded and retained for audit. Production database access is reviewed quarterly by Information Security.",
+        "This standard governs human access to every production database. This standard implements the Information Security Policy for database workloads.",
+        "Access to a production database requires an approved access request in ServiceDesk. Multi-factor authentication is required for every production database session. Engineers must connect to a production database only through the Bastion Host. Direct connections from laptops to a production database are prohibited.",
+        "Access to production systems must follow the principle of least privilege. Multi-factor authentication is required for all access to production systems. User access to production systems must be reviewed quarterly by the system owner. Shared accounts are prohibited on production systems.",
+        "Human Resources owns the Remote Work Policy. Information Security owns the Information Security Policy, the Production Database Access Standard and the Network Security Guidelines. Platform Engineering owns the API Authentication Standard. Legal & Compliance owns the Data Retention Policy. Site Reliability Engineering owns the Logging and Monitoring Standard. IT Operations owns the Remote Access Standard.",
+        "Information Security owns the Security Incident Response Procedure. Business Development owns the Partner Integration Onboarding Procedure."
+      ],
+      "reference": "The orders database (Atlas) is a production database, so engineers need an approved access request in ServiceDesk, multi-factor authentication and must connect through the Bastion Host (SEC-STD-004).",
+      "expected_facts": [
+        "Bastion Host"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": true,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 7,
+      "citations_valid": 7,
+      "claims_total": 5,
+      "claims_supported": 3,
+      "latency_ms": 1034.6,
+      "error": null
+    },
+    {
+      "item_id": "Q12",
+      "category": "answerable",
+      "configuration": "baseline",
+      "question": "Who owns the Atlas cluster?",
+      "answer": "Platform Engineering owns the Atlas cluster. [1][2]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "ORG-REG-001",
+        "TECH-DB-002"
+      ],
+      "retrieved_doc_ids": [
+        "TECH-DB-002",
+        "ORG-REG-001",
+        "PROC-PART-003"
+      ],
+      "contexts": [
+        "Atlas is a production database cluster that stores customer orders for the Order Management Service. The Atlas Cluster runs PostgreSQL 15 across three availability zones. Platform Engineering owns the Atlas Cluster.",
+        "Platform Engineering owns the Atlas Cluster, the Public API Gateway and the Customer Data Platform. IT Operations owns the Corporate VPN and the Identity Provider. Information Security owns the Bastion Host.",
+        "Atlas uses one primary node and two synchronous replicas. Failover to a replica completes in under 60 seconds. Connection pooling for Atlas is handled by PgBouncer.",
+        "Atlas metrics are exported to the central monitoring stack. Site Reliability Engineering is paged when replication lag exceeds 30 seconds.",
+        "Atlas backups are taken nightly and kept for 35 days. Point-in-time recovery is available for the previous 7 days.",
+        "Business Development owns the Partner Integration Onboarding Procedure."
+      ],
+      "reference": "Platform Engineering owns the Atlas Cluster.",
+      "expected_facts": [
+        "Platform Engineering"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 2,
+      "citations_valid": 2,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 719.1,
+      "error": null
+    },
+    {
+      "item_id": "Q13",
+      "category": "answerable",
+      "configuration": "baseline",
+      "question": "How long do access tokens for the public API remain valid?",
+      "answer": "Access tokens for the public API remain valid for 60 minutes. [1]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "TECH-API-002"
+      ],
+      "retrieved_doc_ids": [
+        "TECH-API-002",
+        "SRE-STD-010",
+        "LEG-POL-003",
+        "IT-STD-015"
+      ],
+      "contexts": [
+        "All API clients must authenticate with OAuth 2.0 using the client credentials flow. Access tokens expire after 60 minutes. Static API keys are prohibited for new integrations. Client secrets must be rotated every 90 days. Partner integrations must use mutual TLS in addition to OAuth 2.0.",
+        "Each client is limited to 600 requests per minute by default.",
+        "This standard governs authentication for every service exposed through the Public API Gateway. This standard implements the credential requirements of the Information Security Policy.",
+        "All services must send application logs to the central logging platform. Application logs are retained for 90 days and then deleted. Logs must not contain passwords, access tokens or payment card numbers.",
+        "Customer deletion requests must be completed within 30 days of verification. Data that has reached the end of its retention period must be securely deleted.",
+        "VPN sessions are disconnected after 60 minutes of inactivity. The Corporate VPN client must be updated within 14 days of a new release."
+      ],
+      "reference": "Access tokens expire after 60 minutes (API Authentication Standard, TECH-API-002).",
+      "expected_facts": [
+        "60 minutes"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 1,
+      "citations_valid": 1,
+      "claims_total": 1,
+      "claims_supported": 0,
+      "latency_ms": 4797.4,
+      "error": null
+    },
+    {
+      "item_id": "Q14",
+      "category": "answerable",
+      "configuration": "baseline",
+      "question": "Within what time must security incidents be reported?",
+      "answer": "Security incidents must be reported within 1 hour of discovery. [1][2]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "SEC-POL-001",
+        "PROC-SEC-002"
+      ],
+      "retrieved_doc_ids": [
+        "SEC-POL-001",
+        "PROC-SEC-002",
+        "SEC-GDL-009"
+      ],
+      "contexts": [
+        "Security incidents must be reported to Information Security within 1 hour of discovery.",
+        "All suspected security incidents must be reported within 1 hour of discovery through the security hotline or ServiceDesk. The on-call security analyst assigns a severity level between 1 and 4 to every reported incident.",
+        "For Severity 1 incidents, the Chief Information Security Officer must be notified within 15 minutes. Site Reliability Engineering leads containment for incidents affecting production systems.",
+        "A postmortem must be completed within 5 business days after a Severity 1 incident is resolved. Information Security owns the Security Incident Response Procedure.",
+        "This procedure defines how security incidents are reported, triaged and closed. This procedure depends on the Information Security Policy.",
+        "These guidelines describe baseline network protections for corporate and remote connections."
+      ],
+      "reference": "Security incidents must be reported within 1 hour of discovery (SEC-POL-001 and PROC-SEC-002).",
+      "expected_facts": [
+        "1 hour"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 2,
+      "citations_valid": 2,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 5932.5,
+      "error": null
+    },
+    {
+      "item_id": "Q15",
+      "category": "answerable",
+      "configuration": "baseline",
+      "question": "How long are database backups kept?",
+      "answer": "Database backups are kept for 35 days. [1][2]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "LEG-POL-003",
+        "TECH-DB-002"
+      ],
+      "retrieved_doc_ids": [
+        "TECH-DB-002",
+        "LEG-POL-003",
+        "SRE-STD-010",
+        "SEC-STD-004"
+      ],
+      "contexts": [
+        "Atlas backups are taken nightly and kept for 35 days. Point-in-time recovery is available for the previous 7 days.",
+        "Customer data must be retained for 7 years after the end of the customer contract. Application logs must be retained for 12 months. Database backups must be retained for no longer than 35 days. Financial records must be retained for 10 years.",
+        "Customer deletion requests must be completed within 30 days of verification. Data that has reached the end of its retention period must be securely deleted.",
+        "This policy defines how long the company keeps business records and when they are deleted.",
+        "All services must send application logs to the central logging platform. Application logs are retained for 90 days and then deleted. Logs must not contain passwords, access tokens or payment card numbers.",
+        "Production database accounts are read-only by default. Write access requires an approved change ticket and expires after 4 hours. All production database sessions are recorded and retained for audit. Production database access is reviewed quarterly by Information Security."
+      ],
+      "reference": "Database backups are retained for no longer than 35 days (LEG-POL-003); Atlas backups are kept for 35 days (TECH-DB-002).",
+      "expected_facts": [
+        "35 days"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 2,
+      "citations_valid": 2,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 4874.3,
+      "error": null
+    },
+    {
+      "item_id": "Q16",
+      "category": "answerable",
+      "configuration": "baseline",
+      "question": "What is the minimum password length?",
+      "answer": "The minimum password length is 14 characters. [1]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "SEC-POL-001"
+      ],
+      "retrieved_doc_ids": [
+        "SEC-POL-001",
+        "TECH-API-002",
+        "SEC-GDL-009"
+      ],
+      "contexts": [
+        "Passwords must contain at least 14 characters. Client secrets must be stored in the approved secrets manager and must never be committed to source code.",
+        "Each client is limited to 600 requests per minute by default.",
+        "All API clients must authenticate with OAuth 2.0 using the client credentials flow. Access tokens expire after 60 minutes. Static API keys are prohibited for new integrations. Client secrets must be rotated every 90 days. Partner integrations must use mutual TLS in addition to OAuth 2.0.",
+        "These guidelines describe baseline network protections for corporate and remote connections.",
+        "This standard governs authentication for every service exposed through the Public API Gateway. This standard implements the credential requirements of the Information Security Policy.",
+        "Access to production systems must follow the principle of least privilege. Multi-factor authentication is required for all access to production systems. User access to production systems must be reviewed quarterly by the system owner. Shared accounts are prohibited on production systems."
+      ],
+      "reference": "Passwords must contain at least 14 characters (SEC-POL-001).",
+      "expected_facts": [
+        "14 characters"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 1,
+      "citations_valid": 1,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 4677.2,
+      "error": null
+    },
+    {
+      "item_id": "Q17",
+      "category": "answerable",
+      "configuration": "baseline",
+      "question": "How quickly must the CISO be notified about a Severity 1 incident?",
+      "answer": "The CISO must be notified within 15 minutes for a Severity 1 incident. [1]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "PROC-SEC-002"
+      ],
+      "retrieved_doc_ids": [
+        "PROC-SEC-002",
+        "SEC-POL-001",
+        "SRE-STD-010"
+      ],
+      "contexts": [
+        "For Severity 1 incidents, the Chief Information Security Officer must be notified within 15 minutes. Site Reliability Engineering leads containment for incidents affecting production systems.",
+        "Security incidents must be reported to Information Security within 1 hour of discovery.",
+        "All suspected security incidents must be reported within 1 hour of discovery through the security hotline or ServiceDesk. The on-call security analyst assigns a severity level between 1 and 4 to every reported incident.",
+        "A postmortem must be completed within 5 business days after a Severity 1 incident is resolved. Information Security owns the Security Incident Response Procedure.",
+        "This procedure defines how security incidents are reported, triaged and closed. This procedure depends on the Information Security Policy.",
+        "Every production service must define availability alerts before launch."
+      ],
+      "reference": "For Severity 1 incidents the Chief Information Security Officer must be notified within 15 minutes (PROC-SEC-002).",
+      "expected_facts": [
+        "15 minutes"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 1,
+      "citations_valid": 1,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 5843.3,
+      "error": null
+    },
+    {
+      "item_id": "Q18",
+      "category": "answerable",
+      "configuration": "baseline",
+      "question": "Are static API keys allowed for new partner integrations?",
+      "answer": "Static API keys are not allowed for new partner integrations. [1]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "TECH-API-002"
+      ],
+      "retrieved_doc_ids": [
+        "TECH-API-002",
+        "PROC-PART-003"
+      ],
+      "contexts": [
+        "All API clients must authenticate with OAuth 2.0 using the client credentials flow. Access tokens expire after 60 minutes. Static API keys are prohibited for new integrations. Client secrets must be rotated every 90 days. Partner integrations must use mutual TLS in addition to OAuth 2.0.",
+        "1. Business Development records the partner agreement in the partner register. 2. Platform Engineering creates an OAuth 2.0 client for the partner in the Public API Gateway. 3. The partner receives its client secret through the secure credential portal. 4. Platform Engineering issues a mutual TLS certificate to the partner. 5. The partner completes a test integration in the sandbox environment within 10 business days.",
+        "This procedure describes how a new external partner is connected to the Public API Gateway. This procedure depends on the API Authentication Standard.",
+        "This standard governs authentication for every service exposed through the Public API Gateway. This standard implements the credential requirements of the Information Security Policy.",
+        "Business Development owns the Partner Integration Onboarding Procedure.",
+        "Each client is limited to 600 requests per minute by default."
+      ],
+      "reference": "No. Static API keys are prohibited for new integrations (TECH-API-002).",
+      "expected_facts": [
+        "prohibited"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 1,
+      "citations_valid": 1,
+      "claims_total": 1,
+      "claims_supported": 0,
+      "latency_ms": 4764.4,
+      "error": null
+    },
+    {
+      "item_id": "Q19",
+      "category": "compatible_conditions",
+      "configuration": "baseline",
+      "question": "Can personal devices be used to read webmail?",
+      "answer": "Personal devices are allowed to be used to read webmail by accessing the webmail portal through a browser. [1]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "IT-STD-015"
+      ],
+      "retrieved_doc_ids": [
+        "IT-STD-015",
+        "HR-POL-007",
+        "HR-POL-007-V1",
+        "SEC-POL-001",
+        "SRE-STD-010"
+      ],
+      "contexts": [
+        "Personal devices are permitted for remote access only when accessing the webmail portal through a browser.",
+        "Employees must use a company-managed laptop for all remote work. Personal devices are prohibited for remote access to internal systems. All remote connections must use the Corporate VPN with multi-factor authentication.",
+        "Employees may use personal devices for remote access to internal systems. Remote connections must use the Corporate VPN.",
+        "This policy depends on the Information Security Policy.",
+        "Customer data must be encrypted at rest and in transit.",
+        "All services must send application logs to the central logging platform. Application logs are retained for 90 days and then deleted. Logs must not contain passwords, access tokens or payment card numbers."
+      ],
+      "reference": "Yes, but only when accessing the webmail portal through a browser (IT-STD-015). Otherwise personal devices are prohibited for remote access to internal systems (HR-POL-007).",
+      "expected_facts": [
+        "webmail portal"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 1,
+      "citations_valid": 1,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 6345.3,
+      "error": null
+    },
+    {
+      "item_id": "Q20",
+      "category": "query_expansion",
+      "configuration": "baseline",
+      "question": "How many days can staff telecommute each week?",
+      "answer": "Staff can telecommute up to 3 days per week. [1]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "HR-POL-007"
+      ],
+      "retrieved_doc_ids": [
+        "HR-POL-007-V1",
+        "HR-POL-007",
+        "IT-STD-015"
+      ],
+      "contexts": [
+        "Employees may work from home up to 2 days per week with manager approval.",
+        "Employees may work from home up to 3 days per week with manager approval. Employees must be available during core hours from 10:00 to 15:00 local time on remote days. Working from outside the home country requires prior approval from Human Resources and is limited to 30 days per year.",
+        "VPN sessions are disconnected after 60 minutes of inactivity. The Corporate VPN client must be updated within 14 days of a new release.",
+        "Employees may use personal devices for remote access to internal systems. Remote connections must use the Corporate VPN.",
+        "Employees must use a company-managed laptop for all remote work. Personal devices are prohibited for remote access to internal systems. All remote connections must use the Corporate VPN with multi-factor authentication.",
+        "This policy depends on the Information Security Policy."
+      ],
+      "reference": "Up to 3 days per week with manager approval (HR-POL-007).",
+      "expected_facts": [
+        "3 days per week"
+      ],
+      "stale_facts": [
+        "2 days per week"
+      ],
+      "expected_conflict": "resolved:HR-POL-007",
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 1,
+      "citations_valid": 1,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 4745.0,
+      "error": null
+    },
+    {
+      "item_id": "Q21",
+      "category": "unanswerable",
+      "configuration": "baseline",
+      "question": "What is the company's maternity leave policy?",
+      "answer": "The context does not contain an answer.",
+      "abstained": true,
+      "should_abstain": true,
+      "relevant_doc_ids": [],
+      "retrieved_doc_ids": [
+        "HR-POL-007",
+        "HR-POL-007-V1"
+      ],
+      "contexts": [
+        "This policy depends on the Information Security Policy.",
+        "Employees may work from home up to 2 days per week with manager approval.",
+        "This policy sets out the rules for employees who work from home.",
+        "Employees must use a company-managed laptop for all remote work. Personal devices are prohibited for remote access to internal systems. All remote connections must use the Corporate VPN with multi-factor authentication.",
+        "This policy defines how employees may work from home and connect to company resources. It replaces version 1.0 of the Remote Work Policy, which is no longer in force.",
+        "Employees may work from home up to 3 days per week with manager approval. Employees must be available during core hours from 10:00 to 15:00 local time on remote days. Working from outside the home country requires prior approval from Human Resources and is limited to 30 days per year."
+      ],
+      "reference": null,
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 0,
+      "citations_valid": 0,
+      "claims_total": 0,
+      "claims_supported": 0,
+      "latency_ms": 5895.3,
+      "error": null
+    },
+    {
+      "item_id": "Q22",
+      "category": "unanswerable",
+      "configuration": "baseline",
+      "question": "How are travel expenses reimbursed?",
+      "answer": "The context does not contain an answer.",
+      "abstained": true,
+      "should_abstain": true,
+      "relevant_doc_ids": [],
+      "retrieved_doc_ids": [
+        "SEC-POL-001",
+        "HR-POL-007",
+        "IT-STD-015",
+        "HR-POL-007-V1",
+        "PROC-PART-003",
+        "LEG-POL-003"
+      ],
+      "contexts": [
+        "Customer data must be encrypted at rest and in transit.",
+        "This policy depends on the Information Security Policy.",
+        "This standard governs remote connections to the corporate network through the Corporate VPN.",
+        "Employees may use personal devices for remote access to internal systems. Remote connections must use the Corporate VPN.",
+        "Business Development owns the Partner Integration Onboarding Procedure.",
+        "This policy defines how long the company keeps business records and when they are deleted."
+      ],
+      "reference": null,
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 0,
+      "citations_valid": 0,
+      "claims_total": 0,
+      "claims_supported": 0,
+      "latency_ms": 966.2,
+      "error": null
+    },
+    {
+      "item_id": "Q23",
+      "category": "unanswerable",
+      "configuration": "baseline",
+      "question": "What is the dress code for the office?",
+      "answer": "The context does not contain an answer.",
+      "abstained": true,
+      "should_abstain": true,
+      "relevant_doc_ids": [],
+      "retrieved_doc_ids": [
+        "SEC-POL-001",
+        "HR-POL-007",
+        "SEC-STD-004",
+        "SEC-GDL-009",
+        "HR-POL-007-V1"
+      ],
+      "contexts": [
+        "Passwords must contain at least 14 characters. Client secrets must be stored in the approved secrets manager and must never be committed to source code.",
+        "This policy depends on the Information Security Policy.",
+        "This standard governs human access to every production database. This standard implements the Information Security Policy for database workloads.",
+        "Production systems must be isolated from the office network.",
+        "This policy sets out the rules for employees who work from home.",
+        "Customer data must be encrypted at rest and in transit."
+      ],
+      "reference": null,
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 0,
+      "citations_valid": 0,
+      "claims_total": 0,
+      "claims_supported": 0,
+      "latency_ms": 4864.0,
+      "error": null
+    },
+    {
+      "item_id": "Q24",
+      "category": "unanswerable",
+      "configuration": "baseline",
+      "question": "What is the bonus structure for the sales team?",
+      "answer": "The context does not contain an answer.",
+      "abstained": true,
+      "should_abstain": true,
+      "relevant_doc_ids": [],
+      "retrieved_doc_ids": [
+        "ORG-REG-001",
+        "PROC-PART-003",
+        "SEC-GDL-009",
+        "TECH-DB-002",
+        "IT-STD-015"
+      ],
+      "contexts": [
+        "Platform Engineering owns the Atlas Cluster, the Public API Gateway and the Customer Data Platform. IT Operations owns the Corporate VPN and the Identity Provider. Information Security owns the Bastion Host.",
+        "Business Development owns the Partner Integration Onboarding Procedure.",
+        "Information Security owns the Security Incident Response Procedure. Business Development owns the Partner Integration Onboarding Procedure.",
+        "Production systems must be isolated from the office network.",
+        "Atlas is a production database cluster that stores customer orders for the Order Management Service. The Atlas Cluster runs PostgreSQL 15 across three availability zones. Platform Engineering owns the Atlas Cluster.",
+        "This standard governs remote connections to the corporate network through the Corporate VPN."
+      ],
+      "reference": null,
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 0,
+      "citations_valid": 0,
+      "claims_total": 0,
+      "claims_supported": 0,
+      "latency_ms": 4926.7,
+      "error": null
+    },
+    {
+      "item_id": "Q25",
+      "category": "unsupported_trigger",
+      "configuration": "baseline",
+      "question": "What is the maximum storage capacity of the Atlas cluster?",
+      "answer": "The context does not contain an answer.",
+      "abstained": true,
+      "should_abstain": true,
+      "relevant_doc_ids": [],
+      "retrieved_doc_ids": [
+        "TECH-DB-002",
+        "ORG-REG-001",
+        "TECH-API-002"
+      ],
+      "contexts": [
+        "Atlas uses one primary node and two synchronous replicas. Failover to a replica completes in under 60 seconds. Connection pooling for Atlas is handled by PgBouncer.",
+        "Atlas is a production database cluster that stores customer orders for the Order Management Service. The Atlas Cluster runs PostgreSQL 15 across three availability zones. Platform Engineering owns the Atlas Cluster.",
+        "Atlas backups are taken nightly and kept for 35 days. Point-in-time recovery is available for the previous 7 days.",
+        "Atlas metrics are exported to the central monitoring stack. Site Reliability Engineering is paged when replication lag exceeds 30 seconds.",
+        "Platform Engineering owns the Atlas Cluster, the Public API Gateway and the Customer Data Platform. IT Operations owns the Corporate VPN and the Identity Provider. Information Security owns the Bastion Host.",
+        "Each client is limited to 600 requests per minute by default."
+      ],
+      "reference": null,
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 0,
+      "citations_valid": 0,
+      "claims_total": 0,
+      "claims_supported": 0,
+      "latency_ms": 7055.3,
+      "error": null
+    },
+    {
+      "item_id": "Q26",
+      "category": "unsupported_trigger",
+      "configuration": "baseline",
+      "question": "How many failed login attempts lock a VPN account?",
+      "answer": "The provided documents do not specify the number of failed login attempts that lock a VPN account.",
+      "abstained": false,
+      "should_abstain": true,
+      "relevant_doc_ids": [],
+      "retrieved_doc_ids": [
+        "SEC-GDL-009",
+        "IT-STD-015",
+        "HR-POL-007",
+        "TECH-API-002",
+        "SEC-POL-001"
+      ],
+      "contexts": [
+        "VPN sessions must be disconnected after 15 minutes of inactivity. Split tunnelling is not permitted on corporate VPN connections.",
+        "VPN sessions are disconnected after 60 minutes of inactivity. The Corporate VPN client must be updated within 14 days of a new release.",
+        "Employees must use a company-managed laptop for all remote work. Personal devices are prohibited for remote access to internal systems. All remote connections must use the Corporate VPN with multi-factor authentication.",
+        "Each client is limited to 600 requests per minute by default.",
+        "Passwords must contain at least 14 characters. Client secrets must be stored in the approved secrets manager and must never be committed to source code.",
+        "These guidelines describe baseline network protections for corporate and remote connections."
+      ],
+      "reference": null,
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 0,
+      "citations_valid": 0,
+      "claims_total": 1,
+      "claims_supported": 0,
+      "latency_ms": 4148.6,
+      "error": null
+    },
+    {
+      "item_id": "Q27",
+      "category": "unsupported_trigger",
+      "configuration": "baseline",
+      "question": "What is the penalty for violating the Remote Work Policy?",
+      "answer": "The context does not contain an answer.",
+      "abstained": true,
+      "should_abstain": true,
+      "relevant_doc_ids": [],
+      "retrieved_doc_ids": [
+        "HR-POL-007",
+        "HR-POL-007-V1"
+      ],
+      "contexts": [
+        "This policy depends on the Information Security Policy.",
+        "This policy defines how employees may work from home and connect to company resources. It replaces version 1.0 of the Remote Work Policy, which is no longer in force.",
+        "Employees may work from home up to 2 days per week with manager approval.",
+        "This policy sets out the rules for employees who work from home.",
+        "Employees must use a company-managed laptop for all remote work. Personal devices are prohibited for remote access to internal systems. All remote connections must use the Corporate VPN with multi-factor authentication.",
+        "Employees may work from home up to 3 days per week with manager approval. Employees must be available during core hours from 10:00 to 15:00 local time on remote days. Working from outside the home country requires prior approval from Human Resources and is limited to 30 days per year."
+      ],
+      "reference": null,
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 0,
+      "citations_valid": 0,
+      "claims_total": 0,
+      "claims_supported": 0,
+      "latency_ms": 4865.5,
+      "error": null
+    },
+    {
+      "item_id": "Q28",
+      "category": "unsupported_trigger",
+      "configuration": "baseline",
+      "question": "Which encryption algorithm does the Public API Gateway use to sign tokens?",
+      "answer": "The context does not contain an answer.",
+      "abstained": true,
+      "should_abstain": true,
+      "relevant_doc_ids": [],
+      "retrieved_doc_ids": [
+        "TECH-API-002",
+        "PROC-PART-003",
+        "SEC-POL-001"
+      ],
+      "contexts": [
+        "This standard governs authentication for every service exposed through the Public API Gateway. This standard implements the credential requirements of the Information Security Policy.",
+        "All API clients must authenticate with OAuth 2.0 using the client credentials flow. Access tokens expire after 60 minutes. Static API keys are prohibited for new integrations. Client secrets must be rotated every 90 days. Partner integrations must use mutual TLS in addition to OAuth 2.0.",
+        "Each client is limited to 600 requests per minute by default.",
+        "1. Business Development records the partner agreement in the partner register. 2. Platform Engineering creates an OAuth 2.0 client for the partner in the Public API Gateway. 3. The partner receives its client secret through the secure credential portal. 4. Platform Engineering issues a mutual TLS certificate to the partner. 5. The partner completes a test integration in the sandbox environment within 10 business days.",
+        "This procedure describes how a new external partner is connected to the Public API Gateway. This procedure depends on the API Authentication Standard.",
+        "Customer data must be encrypted at rest and in transit."
+      ],
+      "reference": null,
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": null,
+      "conflicts": [],
+      "citations_total": 0,
+      "citations_valid": 0,
+      "claims_total": 0,
+      "claims_supported": 0,
+      "latency_ms": 6246.2,
+      "error": null
+    },
+    {
+      "item_id": "Q01",
+      "category": "answerable",
+      "configuration": "improved",
+      "question": "What is the company's work-from-home policy?",
+      "answer": "Employees may work from home up to 3 days per week with manager approval. [1] Employees must be available during core hours from 10:00 to 15:00 local time on remote days. [1] Working from outside the home country requires prior approval from Human Resources and is limited to 30 days per year. [1] Employees must use a company-managed laptop for all remote work. [2] Personal devices are prohibited for remote access to internal systems. [2] All remote connections must use the Corporate VPN with multi-factor authentication. [2]\nNote: documents disagree on Remote Work (remote work days); HR-POL-007 explicitly supersedes HR-POL-007-V1. The applicable document is HR-POL-007.\nNote: documents disagree on Personal Devices (remote access); HR-POL-007 explicitly supersedes HR-POL-007-V1. The applicable document is HR-POL-007.",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "HR-POL-007"
+      ],
+      "retrieved_doc_ids": [
+        "HR-POL-007",
+        "HR-POL-007-V1"
+      ],
+      "contexts": [
+        "This policy defines how employees may work from home and connect to company resources. It replaces version 1.0 of the Remote Work Policy, which is no longer in force.",
+        "This policy sets out the rules for employees who work from home.",
+        "Employees may work from home up to 3 days per week with manager approval. Employees must be available during core hours from 10:00 to 15:00 local time on remote days. Working from outside the home country requires prior approval from Human Resources and is limited to 30 days per year.",
+        "Employees may work from home up to 2 days per week with manager approval.",
+        "Employees must use a company-managed laptop for all remote work. Personal devices are prohibited for remote access to internal systems. All remote connections must use the Corporate VPN with multi-factor authentication.",
+        "Employees may use personal devices for remote access to internal systems. Remote connections must use the Corporate VPN."
+      ],
+      "reference": "Under the Remote Work Policy v2.0 (HR-POL-007, which supersedes v1.0), employees may work from home up to 3 days per week with manager approval, must use a company-managed laptop, may not use personal devices for remote access to internal systems, and must connect through the Corporate VPN with multi-factor authentication.",
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": "resolved:HR-POL-007",
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": "initial_sufficient",
+      "conflicts": [
+        {
+          "resolved": true,
+          "winner": "HR-POL-007"
+        },
+        {
+          "resolved": true,
+          "winner": "HR-POL-007"
+        }
+      ],
+      "citations_total": 6,
+      "citations_valid": 6,
+      "claims_total": 6,
+      "claims_supported": 6,
+      "latency_ms": 9332.4,
+      "error": null
+    },
+    {
+      "item_id": "Q02",
+      "category": "conflict_resolved",
+      "configuration": "improved",
+      "question": "How many days per week can employees work from home?",
+      "answer": "Employees may work from home up to 3 days per week with manager approval. [1]\nNote: documents disagree on Remote Work (remote work days); HR-POL-007 explicitly supersedes HR-POL-007-V1. The applicable document is HR-POL-007.",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "HR-POL-007"
+      ],
+      "retrieved_doc_ids": [
+        "HR-POL-007",
+        "HR-POL-007-V1",
+        "TECH-DB-002",
+        "LEG-POL-003"
+      ],
+      "contexts": [
+        "Employees may work from home up to 3 days per week with manager approval. Employees must be available during core hours from 10:00 to 15:00 local time on remote days. Working from outside the home country requires prior approval from Human Resources and is limited to 30 days per year.",
+        "Employees may work from home up to 2 days per week with manager approval.",
+        "This policy sets out the rules for employees who work from home.",
+        "This policy defines how employees may work from home and connect to company resources. It replaces version 1.0 of the Remote Work Policy, which is no longer in force.",
+        "Atlas backups are taken nightly and kept for 35 days. Point-in-time recovery is available for the previous 7 days.",
+        "Customer data must be retained for 7 years after the end of the customer contract. Application logs must be retained for 12 months. Database backups must be retained for no longer than 35 days. Financial records must be retained for 10 years."
+      ],
+      "reference": "Employees may work from home up to 3 days per week with manager approval (HR-POL-007 v2.0). The older 2-day limit in v1.0 is superseded.",
+      "expected_facts": [
+        "3 days per week"
+      ],
+      "stale_facts": [
+        "2 days per week"
+      ],
+      "expected_conflict": "resolved:HR-POL-007",
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": "initial_sufficient",
+      "conflicts": [
+        {
+          "resolved": true,
+          "winner": "HR-POL-007"
+        }
+      ],
+      "citations_total": 1,
+      "citations_valid": 1,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 7409.2,
+      "error": null
+    },
+    {
+      "item_id": "Q03",
+      "category": "conflict_resolved",
+      "configuration": "improved",
+      "question": "Can employees use personal devices for remote access to internal systems?",
+      "answer": "Employees are prohibited from using personal devices for remote access to internal systems. [1]\nNote: documents disagree on Personal Devices (remote access); HR-POL-007 explicitly supersedes HR-POL-007-V1. The applicable document is HR-POL-007.",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "HR-POL-007"
+      ],
+      "retrieved_doc_ids": [
+        "HR-POL-007-V1",
+        "HR-POL-007",
+        "IT-STD-015"
+      ],
+      "contexts": [
+        "Employees may use personal devices for remote access to internal systems. Remote connections must use the Corporate VPN.",
+        "Employees must use a company-managed laptop for all remote work. Personal devices are prohibited for remote access to internal systems. All remote connections must use the Corporate VPN with multi-factor authentication.",
+        "Personal devices are permitted for remote access only when accessing the webmail portal through a browser.",
+        "This standard governs remote connections to the corporate network through the Corporate VPN.",
+        "This policy defines how employees may work from home and connect to company resources. It replaces version 1.0 of the Remote Work Policy, which is no longer in force.",
+        "This policy sets out the rules for employees who work from home."
+      ],
+      "reference": "No. The current Remote Work Policy (HR-POL-007) prohibits personal devices for remote access to internal systems; the permissive rule in v1.0 is superseded.",
+      "expected_facts": [
+        "prohibited"
+      ],
+      "stale_facts": [
+        "may use personal devices"
+      ],
+      "expected_conflict": "resolved:HR-POL-007",
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": "initial_sufficient",
+      "conflicts": [
+        {
+          "resolved": true,
+          "winner": "HR-POL-007"
+        }
+      ],
+      "citations_total": 1,
+      "citations_valid": 1,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 6562.5,
+      "error": null
+    },
+    {
+      "item_id": "Q04",
+      "category": "conflict_resolved",
+      "configuration": "improved",
+      "question": "Two documents give different rules for using personal devices for remote access. Which policy is applicable?",
+      "answer": "Personal devices are prohibited for remote access to internal systems. [1]\nNote: documents disagree on Personal Devices (remote access); HR-POL-007 explicitly supersedes HR-POL-007-V1. The applicable document is HR-POL-007.",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "HR-POL-007"
+      ],
+      "retrieved_doc_ids": [
+        "HR-POL-007",
+        "HR-POL-007-V1",
+        "IT-STD-015"
+      ],
+      "contexts": [
+        "Employees must use a company-managed laptop for all remote work. Personal devices are prohibited for remote access to internal systems. All remote connections must use the Corporate VPN with multi-factor authentication.",
+        "Employees may use personal devices for remote access to internal systems. Remote connections must use the Corporate VPN.",
+        "Personal devices are permitted for remote access only when accessing the webmail portal through a browser.",
+        "This policy depends on the Information Security Policy.",
+        "This policy sets out the rules for employees who work from home.",
+        "This standard governs remote connections to the corporate network through the Corporate VPN."
+      ],
+      "reference": "The Remote Work Policy v2.0 (HR-POL-007) applies because it explicitly supersedes v1.0 (HR-POL-007-V1); personal devices are prohibited for remote access to internal systems.",
+      "expected_facts": [
+        "HR-POL-007"
+      ],
+      "stale_facts": [
+        "may use personal devices"
+      ],
+      "expected_conflict": "resolved:HR-POL-007",
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": "initial_sufficient",
+      "conflicts": [
+        {
+          "resolved": true,
+          "winner": "HR-POL-007"
+        }
+      ],
+      "citations_total": 1,
+      "citations_valid": 1,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 6233.4,
+      "error": null
+    },
+    {
+      "item_id": "Q05",
+      "category": "conflict_unresolved",
+      "configuration": "improved",
+      "question": "What is the inactivity timeout for VPN sessions?",
+      "answer": "\u26a0 Unresolved conflict between sources \u2014 the documents disagree and precedence could not be established:\n\u2022 VPN sessions are disconnected after 60 minutes of inactivity. [1]\n\u2022 VPN sessions must be disconnected after 15 minutes of inactivity. [2]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "IT-STD-015",
+        "SEC-GDL-009"
+      ],
+      "retrieved_doc_ids": [
+        "IT-STD-015",
+        "SEC-GDL-009",
+        "SEC-STD-004",
+        "HR-POL-007-V1",
+        "HR-POL-007"
+      ],
+      "contexts": [
+        "VPN sessions are disconnected after 60 minutes of inactivity. The Corporate VPN client must be updated within 14 days of a new release.",
+        "VPN sessions must be disconnected after 15 minutes of inactivity. Split tunnelling is not permitted on corporate VPN connections.",
+        "Production database accounts are read-only by default. Write access requires an approved change ticket and expires after 4 hours. All production database sessions are recorded and retained for audit. Production database access is reviewed quarterly by Information Security.",
+        "Employees may use personal devices for remote access to internal systems. Remote connections must use the Corporate VPN.",
+        "Employees may work from home up to 3 days per week with manager approval. Employees must be available during core hours from 10:00 to 15:00 local time on remote days. Working from outside the home country requires prior approval from Human Resources and is limited to 30 days per year.",
+        "This standard governs remote connections to the corporate network through the Corporate VPN."
+      ],
+      "reference": "The sources conflict: the Remote Access Standard (IT-STD-015) says VPN sessions disconnect after 60 minutes of inactivity, while the Network Security Guidelines (SEC-GDL-009) say 15 minutes. Precedence cannot be established from the metadata.",
+      "expected_facts": [
+        "60 minutes",
+        "15 minutes"
+      ],
+      "stale_facts": [],
+      "expected_conflict": "unresolved",
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": "initial_sufficient",
+      "conflicts": [
+        {
+          "resolved": false,
+          "winner": null
+        }
+      ],
+      "citations_total": 4,
+      "citations_valid": 4,
+      "claims_total": 4,
+      "claims_supported": 4,
+      "latency_ms": 8288.3,
+      "error": null
+    },
+    {
+      "item_id": "Q06",
+      "category": "conflict_resolved",
+      "configuration": "improved",
+      "question": "How long must application logs be retained?",
+      "answer": "Application logs must be retained for 12 months. [1]\nNote: documents disagree on Application Logs (retention period); LEG-POL-003 has higher authority ('executive') than SRE-STD-010 ('department'). The applicable document is LEG-POL-003.",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "LEG-POL-003"
+      ],
+      "retrieved_doc_ids": [
+        "LEG-POL-003",
+        "SRE-STD-010",
+        "SEC-STD-004",
+        "PROC-SEC-002"
+      ],
+      "contexts": [
+        "Customer data must be retained for 7 years after the end of the customer contract. Application logs must be retained for 12 months. Database backups must be retained for no longer than 35 days. Financial records must be retained for 10 years.",
+        "All services must send application logs to the central logging platform. Application logs are retained for 90 days and then deleted. Logs must not contain passwords, access tokens or payment card numbers.",
+        "Customer deletion requests must be completed within 30 days of verification. Data that has reached the end of its retention period must be securely deleted.",
+        "Production database accounts are read-only by default. Write access requires an approved change ticket and expires after 4 hours. All production database sessions are recorded and retained for audit. Production database access is reviewed quarterly by Information Security.",
+        "A postmortem must be completed within 5 business days after a Severity 1 incident is resolved. Information Security owns the Security Incident Response Procedure.",
+        "This policy defines how long the company keeps business records and when they are deleted."
+      ],
+      "reference": "Application logs must be retained for 12 months under the Data Retention Policy (LEG-POL-003), which has higher authority than the Logging and Monitoring Standard's 90-day rule.",
+      "expected_facts": [
+        "12 months"
+      ],
+      "stale_facts": [
+        "90 days"
+      ],
+      "expected_conflict": "resolved:LEG-POL-003",
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": "initial_sufficient",
+      "conflicts": [
+        {
+          "resolved": true,
+          "winner": "LEG-POL-003"
+        }
+      ],
+      "citations_total": 1,
+      "citations_valid": 1,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 6371.5,
+      "error": null
+    },
+    {
+      "item_id": "Q07",
+      "category": "multi_hop",
+      "configuration": "improved",
+      "question": "Which security policies govern production database access?",
+      "answer": "The Production Database Access Standard governs human access to every production database. [1] The Production Database Access Standard implements the Information Security Policy for database workloads. [1] The Information Security Policy governs production systems, including production databases. [1]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "SEC-STD-004",
+        "SEC-POL-001"
+      ],
+      "retrieved_doc_ids": [
+        "SEC-STD-004",
+        "SEC-POL-001",
+        "ORG-REG-001"
+      ],
+      "contexts": [
+        "This standard governs human access to every production database. This standard implements the Information Security Policy for database workloads.",
+        "Access to production systems must follow the principle of least privilege. Multi-factor authentication is required for all access to production systems. User access to production systems must be reviewed quarterly by the system owner. Shared accounts are prohibited on production systems.",
+        "Human Resources owns the Remote Work Policy. Information Security owns the Information Security Policy, the Production Database Access Standard and the Network Security Guidelines. Platform Engineering owns the API Authentication Standard. Legal & Compliance owns the Data Retention Policy. Site Reliability Engineering owns the Logging and Monitoring Standard. IT Operations owns the Remote Access Standard.",
+        "Production database accounts are read-only by default. Write access requires an approved change ticket and expires after 4 hours. All production database sessions are recorded and retained for audit. Production database access is reviewed quarterly by Information Security.",
+        "This policy establishes the baseline security requirements for all employees and contractors. This policy governs all production systems and the Customer Data Platform.",
+        "Access to a production database requires an approved access request in ServiceDesk. Multi-factor authentication is required for every production database session. Engineers must connect to a production database only through the Bastion Host. Direct connections from laptops to a production database are prohibited."
+      ],
+      "reference": "The Production Database Access Standard (SEC-STD-004) governs production database access and implements the Information Security Policy (SEC-POL-001).",
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": "initial_sufficient",
+      "conflicts": [],
+      "citations_total": 3,
+      "citations_valid": 3,
+      "claims_total": 3,
+      "claims_supported": 3,
+      "latency_ms": 14883.2,
+      "error": null
+    },
+    {
+      "item_id": "Q08",
+      "category": "multi_hop",
+      "configuration": "improved",
+      "question": "Which procedure depends on the API authentication policy?",
+      "answer": "Partner Integration Onboarding Procedure depends on the API Authentication Standard. [1]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "PROC-PART-003"
+      ],
+      "retrieved_doc_ids": [
+        "PROC-PART-003",
+        "TECH-API-002",
+        "ORG-REG-001",
+        "PROC-SEC-002"
+      ],
+      "contexts": [
+        "This procedure describes how a new external partner is connected to the Public API Gateway. This procedure depends on the API Authentication Standard.",
+        "This standard governs authentication for every service exposed through the Public API Gateway. This standard implements the credential requirements of the Information Security Policy.",
+        "All API clients must authenticate with OAuth 2.0 using the client credentials flow. Access tokens expire after 60 minutes. Static API keys are prohibited for new integrations. Client secrets must be rotated every 90 days. Partner integrations must use mutual TLS in addition to OAuth 2.0.",
+        "Each client is limited to 600 requests per minute by default.",
+        "Human Resources owns the Remote Work Policy. Information Security owns the Information Security Policy, the Production Database Access Standard and the Network Security Guidelines. Platform Engineering owns the API Authentication Standard. Legal & Compliance owns the Data Retention Policy. Site Reliability Engineering owns the Logging and Monitoring Standard. IT Operations owns the Remote Access Standard.",
+        "This procedure defines how security incidents are reported, triaged and closed. This procedure depends on the Information Security Policy."
+      ],
+      "reference": "The Partner Integration Onboarding Procedure (PROC-PART-003) depends on the API Authentication Standard (TECH-API-002).",
+      "expected_facts": [
+        "procedure depends on the API Authentication Standard"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": "initial_sufficient",
+      "conflicts": [],
+      "citations_total": 1,
+      "citations_valid": 1,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 10605.8,
+      "error": null
+    },
+    {
+      "item_id": "Q09",
+      "category": "multi_hop",
+      "configuration": "improved",
+      "question": "What security requirements apply to a production system, and which documents establish those requirements?",
+      "answer": "Production systems must be isolated from the office network. [1] The Production Database Access Standard governs human access to every production database and implements the Information Security Policy for database workloads. [2] Production database accounts are read\u2011only by default; write access requires an approved change ticket and expires after 4\u202fhours, all sessions are recorded and retained for audit, and access is reviewed quarterly by Information Security. [3]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "SEC-POL-001"
+      ],
+      "retrieved_doc_ids": [
+        "SEC-POL-001",
+        "SEC-GDL-009",
+        "SEC-STD-004"
+      ],
+      "contexts": [
+        "Access to production systems must follow the principle of least privilege. Multi-factor authentication is required for all access to production systems. User access to production systems must be reviewed quarterly by the system owner. Shared accounts are prohibited on production systems.",
+        "This policy establishes the baseline security requirements for all employees and contractors. This policy governs all production systems and the Customer Data Platform.",
+        "Production systems must be isolated from the office network.",
+        "Access to a production database requires an approved access request in ServiceDesk. Multi-factor authentication is required for every production database session. Engineers must connect to a production database only through the Bastion Host. Direct connections from laptops to a production database are prohibited.",
+        "This standard governs human access to every production database. This standard implements the Information Security Policy for database workloads.",
+        "Production database accounts are read-only by default. Write access requires an approved change ticket and expires after 4 hours. All production database sessions are recorded and retained for audit. Production database access is reviewed quarterly by Information Security."
+      ],
+      "reference": "The Information Security Policy (SEC-POL-001) requires least privilege, multi-factor authentication for all access to production systems, quarterly access reviews and prohibits shared accounts.",
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": "initial_sufficient",
+      "conflicts": [],
+      "citations_total": 3,
+      "citations_valid": 3,
+      "claims_total": 3,
+      "claims_supported": 3,
+      "latency_ms": 16250.9,
+      "error": null
+    },
+    {
+      "item_id": "Q10",
+      "category": "graph_recovery",
+      "configuration": "improved",
+      "question": "What are the access requirements for the Atlas cluster?",
+      "answer": "Atlas Cluster is a production database. [1] Access to a production database requires an approved access request in ServiceDesk. [2] Multi-factor authentication is required for every production database session. [2] Engineers must connect to a production database only through the Bastion Host. [2] Direct connections from laptops to a production database are prohibited. [2] Production database accounts are read-only by default. [3] Write access requires an approved change ticket and expires after 4 hours. [3] All production database sessions are recorded and retained for audit. [3] Production database access is reviewed quarterly by Information Security. [3]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "SEC-STD-004"
+      ],
+      "retrieved_doc_ids": [
+        "SEC-STD-004",
+        "SEC-POL-001",
+        "TECH-DB-002",
+        "ORG-REG-001"
+      ],
+      "contexts": [
+        "Access to a production database requires an approved access request in ServiceDesk. Multi-factor authentication is required for every production database session. Engineers must connect to a production database only through the Bastion Host. Direct connections from laptops to a production database are prohibited.",
+        "Production database accounts are read-only by default. Write access requires an approved change ticket and expires after 4 hours. All production database sessions are recorded and retained for audit. Production database access is reviewed quarterly by Information Security.",
+        "This standard governs human access to every production database. This standard implements the Information Security Policy for database workloads.",
+        "Access to production systems must follow the principle of least privilege. Multi-factor authentication is required for all access to production systems. User access to production systems must be reviewed quarterly by the system owner. Shared accounts are prohibited on production systems.",
+        "Atlas is a production database cluster that stores customer orders for the Order Management Service. The Atlas Cluster runs PostgreSQL 15 across three availability zones. Platform Engineering owns the Atlas Cluster.",
+        "Human Resources owns the Remote Work Policy. Information Security owns the Information Security Policy, the Production Database Access Standard and the Network Security Guidelines. Platform Engineering owns the API Authentication Standard. Legal & Compliance owns the Data Retention Policy. Site Reliability Engineering owns the Logging and Monitoring Standard. IT Operations owns the Remote Access Standard."
+      ],
+      "reference": "Atlas is a production database, so the Production Database Access Standard (SEC-STD-004) applies: an approved access request in ServiceDesk, multi-factor authentication, connection only through the Bastion Host, read-only accounts by default, and write access only with an approved change ticket (expiring after 4 hours).",
+      "expected_facts": [
+        "access request"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": true,
+      "recovery_triggered": true,
+      "retrieval_outcome": "recovered",
+      "conflicts": [],
+      "citations_total": 9,
+      "citations_valid": 9,
+      "claims_total": 9,
+      "claims_supported": 9,
+      "latency_ms": 11627.0,
+      "error": null
+    },
+    {
+      "item_id": "Q11",
+      "category": "graph_recovery",
+      "configuration": "improved",
+      "question": "What controls apply before an engineer can work on the orders database?",
+      "answer": "Atlas Cluster is a Production Database. [1] Access to a production database requires an approved access request in ServiceDesk. [2] Multi-factor authentication is required for every production database session. [2] Engineers must connect to a production database only through the Bastion Host. [2] Direct connections from laptops to a production database are prohibited. [2] Access to production systems must follow the principle of least privilege. [3] User access to production systems must be reviewed quarterly by the system owner. [3] Shared accounts are prohibited on production systems. [3] Production database accounts are read-only by default. [4] Write access to a production database requires an approved change ticket and expires after 4 hours. [4] All production database sessions are recorded and retained for audit. [4] Production database access is reviewed quarterly by Information Security. [4]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "SEC-STD-004"
+      ],
+      "retrieved_doc_ids": [
+        "SEC-STD-004",
+        "SEC-POL-001",
+        "ORG-REG-001",
+        "TECH-DB-002"
+      ],
+      "contexts": [
+        "Access to a production database requires an approved access request in ServiceDesk. Multi-factor authentication is required for every production database session. Engineers must connect to a production database only through the Bastion Host. Direct connections from laptops to a production database are prohibited.",
+        "Access to production systems must follow the principle of least privilege. Multi-factor authentication is required for all access to production systems. User access to production systems must be reviewed quarterly by the system owner. Shared accounts are prohibited on production systems.",
+        "Production database accounts are read-only by default. Write access requires an approved change ticket and expires after 4 hours. All production database sessions are recorded and retained for audit. Production database access is reviewed quarterly by Information Security.",
+        "This standard governs human access to every production database. This standard implements the Information Security Policy for database workloads.",
+        "Human Resources owns the Remote Work Policy. Information Security owns the Information Security Policy, the Production Database Access Standard and the Network Security Guidelines. Platform Engineering owns the API Authentication Standard. Legal & Compliance owns the Data Retention Policy. Site Reliability Engineering owns the Logging and Monitoring Standard. IT Operations owns the Remote Access Standard.",
+        "Atlas is a production database cluster that stores customer orders for the Order Management Service. The Atlas Cluster runs PostgreSQL 15 across three availability zones. Platform Engineering owns the Atlas Cluster."
+      ],
+      "reference": "The orders database (Atlas) is a production database, so engineers need an approved access request in ServiceDesk, multi-factor authentication and must connect through the Bastion Host (SEC-STD-004).",
+      "expected_facts": [
+        "Bastion Host"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": true,
+      "recovery_triggered": true,
+      "retrieval_outcome": "recovered",
+      "conflicts": [],
+      "citations_total": 12,
+      "citations_valid": 12,
+      "claims_total": 12,
+      "claims_supported": 12,
+      "latency_ms": 11783.2,
+      "error": null
+    },
+    {
+      "item_id": "Q12",
+      "category": "answerable",
+      "configuration": "improved",
+      "question": "Who owns the Atlas cluster?",
+      "answer": "Platform Engineering owns the Atlas Cluster. [1][2] Atlas Cluster is related to Production Database. [2]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "ORG-REG-001",
+        "TECH-DB-002"
+      ],
+      "retrieved_doc_ids": [
+        "ORG-REG-001",
+        "TECH-DB-002"
+      ],
+      "contexts": [
+        "Platform Engineering owns the Atlas Cluster, the Public API Gateway and the Customer Data Platform. IT Operations owns the Corporate VPN and the Identity Provider. Information Security owns the Bastion Host.",
+        "Atlas is a production database cluster that stores customer orders for the Order Management Service. The Atlas Cluster runs PostgreSQL 15 across three availability zones. Platform Engineering owns the Atlas Cluster.",
+        "Atlas uses one primary node and two synchronous replicas. Failover to a replica completes in under 60 seconds. Connection pooling for Atlas is handled by PgBouncer.",
+        "Human Resources owns the Remote Work Policy. Information Security owns the Information Security Policy, the Production Database Access Standard and the Network Security Guidelines. Platform Engineering owns the API Authentication Standard. Legal & Compliance owns the Data Retention Policy. Site Reliability Engineering owns the Logging and Monitoring Standard. IT Operations owns the Remote Access Standard.",
+        "Information Security owns the Security Incident Response Procedure. Business Development owns the Partner Integration Onboarding Procedure.",
+        "Atlas metrics are exported to the central monitoring stack. Site Reliability Engineering is paged when replication lag exceeds 30 seconds."
+      ],
+      "reference": "Platform Engineering owns the Atlas Cluster.",
+      "expected_facts": [
+        "Platform Engineering"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": "initial_sufficient",
+      "conflicts": [],
+      "citations_total": 3,
+      "citations_valid": 3,
+      "claims_total": 2,
+      "claims_supported": 2,
+      "latency_ms": 9100.0,
+      "error": null
+    },
+    {
+      "item_id": "Q13",
+      "category": "answerable",
+      "configuration": "improved",
+      "question": "How long do access tokens for the public API remain valid?",
+      "answer": "Access tokens expire after 60 minutes. [1]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "TECH-API-002"
+      ],
+      "retrieved_doc_ids": [
+        "TECH-API-002",
+        "SRE-STD-010",
+        "LEG-POL-003",
+        "PROC-PART-003",
+        "SEC-STD-004"
+      ],
+      "contexts": [
+        "All API clients must authenticate with OAuth 2.0 using the client credentials flow. Access tokens expire after 60 minutes. Static API keys are prohibited for new integrations. Client secrets must be rotated every 90 days. Partner integrations must use mutual TLS in addition to OAuth 2.0.",
+        "All services must send application logs to the central logging platform. Application logs are retained for 90 days and then deleted. Logs must not contain passwords, access tokens or payment card numbers.",
+        "Customer data must be retained for 7 years after the end of the customer contract. Application logs must be retained for 12 months. Database backups must be retained for no longer than 35 days. Financial records must be retained for 10 years.",
+        "1. Business Development records the partner agreement in the partner register. 2. Platform Engineering creates an OAuth 2.0 client for the partner in the Public API Gateway. 3. The partner receives its client secret through the secure credential portal. 4. Platform Engineering issues a mutual TLS certificate to the partner. 5. The partner completes a test integration in the sandbox environment within 10 business days.",
+        "Production database accounts are read-only by default. Write access requires an approved change ticket and expires after 4 hours. All production database sessions are recorded and retained for audit. Production database access is reviewed quarterly by Information Security.",
+        "Each client is limited to 600 requests per minute by default."
+      ],
+      "reference": "Access tokens expire after 60 minutes (API Authentication Standard, TECH-API-002).",
+      "expected_facts": [
+        "60 minutes"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": "initial_sufficient",
+      "conflicts": [],
+      "citations_total": 1,
+      "citations_valid": 1,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 14312.6,
+      "error": null
+    },
+    {
+      "item_id": "Q14",
+      "category": "answerable",
+      "configuration": "improved",
+      "question": "Within what time must security incidents be reported?",
+      "answer": "Security incidents must be reported within 1 hour of discovery. [1][2]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "SEC-POL-001",
+        "PROC-SEC-002"
+      ],
+      "retrieved_doc_ids": [
+        "PROC-SEC-002",
+        "SEC-POL-001",
+        "ORG-REG-001"
+      ],
+      "contexts": [
+        "All suspected security incidents must be reported within 1 hour of discovery through the security hotline or ServiceDesk. The on-call security analyst assigns a severity level between 1 and 4 to every reported incident.",
+        "Security incidents must be reported to Information Security within 1 hour of discovery.",
+        "For Severity 1 incidents, the Chief Information Security Officer must be notified within 15 minutes. Site Reliability Engineering leads containment for incidents affecting production systems.",
+        "A postmortem must be completed within 5 business days after a Severity 1 incident is resolved. Information Security owns the Security Incident Response Procedure.",
+        "This procedure defines how security incidents are reported, triaged and closed. This procedure depends on the Information Security Policy.",
+        "Information Security owns the Security Incident Response Procedure. Business Development owns the Partner Integration Onboarding Procedure."
+      ],
+      "reference": "Security incidents must be reported within 1 hour of discovery (SEC-POL-001 and PROC-SEC-002).",
+      "expected_facts": [
+        "1 hour"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": "initial_sufficient",
+      "conflicts": [],
+      "citations_total": 2,
+      "citations_valid": 2,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 5260.8,
+      "error": null
+    },
+    {
+      "item_id": "Q15",
+      "category": "answerable",
+      "configuration": "improved",
+      "question": "How long are database backups kept?",
+      "answer": "Database backups are kept for 35 days. [1][2]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "LEG-POL-003",
+        "TECH-DB-002"
+      ],
+      "retrieved_doc_ids": [
+        "TECH-DB-002",
+        "LEG-POL-003",
+        "SEC-STD-004",
+        "SRE-STD-010"
+      ],
+      "contexts": [
+        "Atlas backups are taken nightly and kept for 35 days. Point-in-time recovery is available for the previous 7 days.",
+        "Customer data must be retained for 7 years after the end of the customer contract. Application logs must be retained for 12 months. Database backups must be retained for no longer than 35 days. Financial records must be retained for 10 years.",
+        "Production database accounts are read-only by default. Write access requires an approved change ticket and expires after 4 hours. All production database sessions are recorded and retained for audit. Production database access is reviewed quarterly by Information Security.",
+        "Customer deletion requests must be completed within 30 days of verification. Data that has reached the end of its retention period must be securely deleted.",
+        "All services must send application logs to the central logging platform. Application logs are retained for 90 days and then deleted. Logs must not contain passwords, access tokens or payment card numbers.",
+        "This policy defines how long the company keeps business records and when they are deleted."
+      ],
+      "reference": "Database backups are retained for no longer than 35 days (LEG-POL-003); Atlas backups are kept for 35 days (TECH-DB-002).",
+      "expected_facts": [
+        "35 days"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": "initial_sufficient",
+      "conflicts": [],
+      "citations_total": 2,
+      "citations_valid": 2,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 9418.3,
+      "error": null
+    },
+    {
+      "item_id": "Q16",
+      "category": "answerable",
+      "configuration": "improved",
+      "question": "What is the minimum password length?",
+      "answer": "Passwords must contain at least 14 characters. [1]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "SEC-POL-001"
+      ],
+      "retrieved_doc_ids": [
+        "SEC-POL-001",
+        "TECH-API-002"
+      ],
+      "contexts": [
+        "Passwords must contain at least 14 characters. Client secrets must be stored in the approved secrets manager and must never be committed to source code.",
+        "Each client is limited to 600 requests per minute by default.",
+        "This standard governs authentication for every service exposed through the Public API Gateway. This standard implements the credential requirements of the Information Security Policy.",
+        "All API clients must authenticate with OAuth 2.0 using the client credentials flow. Access tokens expire after 60 minutes. Static API keys are prohibited for new integrations. Client secrets must be rotated every 90 days. Partner integrations must use mutual TLS in addition to OAuth 2.0.",
+        "Access to production systems must follow the principle of least privilege. Multi-factor authentication is required for all access to production systems. User access to production systems must be reviewed quarterly by the system owner. Shared accounts are prohibited on production systems.",
+        "Customer data must be encrypted at rest and in transit."
+      ],
+      "reference": "Passwords must contain at least 14 characters (SEC-POL-001).",
+      "expected_facts": [
+        "14 characters"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": true,
+      "retrieval_outcome": "recovered",
+      "conflicts": [],
+      "citations_total": 1,
+      "citations_valid": 1,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 6831.5,
+      "error": null
+    },
+    {
+      "item_id": "Q17",
+      "category": "answerable",
+      "configuration": "improved",
+      "question": "How quickly must the CISO be notified about a Severity 1 incident?",
+      "answer": "For Severity 1 incidents, the Chief Information Security Officer must be notified within 15 minutes. [1]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "PROC-SEC-002"
+      ],
+      "retrieved_doc_ids": [
+        "PROC-SEC-002",
+        "SEC-POL-001",
+        "LEG-POL-003",
+        "IT-STD-015"
+      ],
+      "contexts": [
+        "For Severity 1 incidents, the Chief Information Security Officer must be notified within 15 minutes. Site Reliability Engineering leads containment for incidents affecting production systems.",
+        "A postmortem must be completed within 5 business days after a Severity 1 incident is resolved. Information Security owns the Security Incident Response Procedure.",
+        "All suspected security incidents must be reported within 1 hour of discovery through the security hotline or ServiceDesk. The on-call security analyst assigns a severity level between 1 and 4 to every reported incident.",
+        "Security incidents must be reported to Information Security within 1 hour of discovery.",
+        "Customer deletion requests must be completed within 30 days of verification. Data that has reached the end of its retention period must be securely deleted.",
+        "VPN sessions are disconnected after 60 minutes of inactivity. The Corporate VPN client must be updated within 14 days of a new release."
+      ],
+      "reference": "For Severity 1 incidents the Chief Information Security Officer must be notified within 15 minutes (PROC-SEC-002).",
+      "expected_facts": [
+        "15 minutes"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": "initial_sufficient",
+      "conflicts": [],
+      "citations_total": 1,
+      "citations_valid": 1,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 6715.4,
+      "error": null
+    },
+    {
+      "item_id": "Q18",
+      "category": "answerable",
+      "configuration": "improved",
+      "question": "Are static API keys allowed for new partner integrations?",
+      "answer": "Static API keys are prohibited for new integrations. [1]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "TECH-API-002"
+      ],
+      "retrieved_doc_ids": [
+        "TECH-API-002",
+        "PROC-PART-003",
+        "ORG-REG-001"
+      ],
+      "contexts": [
+        "All API clients must authenticate with OAuth 2.0 using the client credentials flow. Access tokens expire after 60 minutes. Static API keys are prohibited for new integrations. Client secrets must be rotated every 90 days. Partner integrations must use mutual TLS in addition to OAuth 2.0.",
+        "This procedure describes how a new external partner is connected to the Public API Gateway. This procedure depends on the API Authentication Standard.",
+        "1. Business Development records the partner agreement in the partner register. 2. Platform Engineering creates an OAuth 2.0 client for the partner in the Public API Gateway. 3. The partner receives its client secret through the secure credential portal. 4. Platform Engineering issues a mutual TLS certificate to the partner. 5. The partner completes a test integration in the sandbox environment within 10 business days.",
+        "Business Development owns the Partner Integration Onboarding Procedure.",
+        "Information Security owns the Security Incident Response Procedure. Business Development owns the Partner Integration Onboarding Procedure.",
+        "Each client is limited to 600 requests per minute by default."
+      ],
+      "reference": "No. Static API keys are prohibited for new integrations (TECH-API-002).",
+      "expected_facts": [
+        "prohibited"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": "initial_sufficient",
+      "conflicts": [],
+      "citations_total": 1,
+      "citations_valid": 1,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 11902.5,
+      "error": null
+    },
+    {
+      "item_id": "Q19",
+      "category": "compatible_conditions",
+      "configuration": "improved",
+      "question": "Can personal devices be used to read webmail?",
+      "answer": "Personal devices are permitted for remote access when accessing the webmail portal through a browser. [1] Personal devices are prohibited for remote access to internal systems. [2]",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "IT-STD-015"
+      ],
+      "retrieved_doc_ids": [
+        "IT-STD-015",
+        "HR-POL-007-V1",
+        "HR-POL-007",
+        "SRE-STD-010",
+        "SEC-POL-001"
+      ],
+      "contexts": [
+        "Personal devices are permitted for remote access only when accessing the webmail portal through a browser.",
+        "Employees may use personal devices for remote access to internal systems. Remote connections must use the Corporate VPN.",
+        "Employees must use a company-managed laptop for all remote work. Personal devices are prohibited for remote access to internal systems. All remote connections must use the Corporate VPN with multi-factor authentication.",
+        "This policy depends on the Information Security Policy.",
+        "All services must send application logs to the central logging platform. Application logs are retained for 90 days and then deleted. Logs must not contain passwords, access tokens or payment card numbers.",
+        "Customer data must be encrypted at rest and in transit."
+      ],
+      "reference": "Yes, but only when accessing the webmail portal through a browser (IT-STD-015). Otherwise personal devices are prohibited for remote access to internal systems (HR-POL-007).",
+      "expected_facts": [
+        "webmail portal"
+      ],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": "initial_sufficient",
+      "conflicts": [],
+      "citations_total": 2,
+      "citations_valid": 2,
+      "claims_total": 2,
+      "claims_supported": 2,
+      "latency_ms": 1287.5,
+      "error": null
+    },
+    {
+      "item_id": "Q20",
+      "category": "query_expansion",
+      "configuration": "improved",
+      "question": "How many days can staff telecommute each week?",
+      "answer": "Employees may work from home up to 3 days per week with manager approval. [1]\nNote: documents disagree on Remote Work (remote work days); HR-POL-007 explicitly supersedes HR-POL-007-V1. The applicable document is HR-POL-007.",
+      "abstained": false,
+      "should_abstain": false,
+      "relevant_doc_ids": [
+        "HR-POL-007"
+      ],
+      "retrieved_doc_ids": [
+        "HR-POL-007",
+        "HR-POL-007-V1",
+        "TECH-DB-002",
+        "IT-STD-015",
+        "TECH-API-002",
+        "LEG-POL-003"
+      ],
+      "contexts": [
+        "Employees may work from home up to 3 days per week with manager approval. Employees must be available during core hours from 10:00 to 15:00 local time on remote days. Working from outside the home country requires prior approval from Human Resources and is limited to 30 days per year.",
+        "Employees may work from home up to 2 days per week with manager approval.",
+        "Atlas backups are taken nightly and kept for 35 days. Point-in-time recovery is available for the previous 7 days.",
+        "VPN sessions are disconnected after 60 minutes of inactivity. The Corporate VPN client must be updated within 14 days of a new release.",
+        "All API clients must authenticate with OAuth 2.0 using the client credentials flow. Access tokens expire after 60 minutes. Static API keys are prohibited for new integrations. Client secrets must be rotated every 90 days. Partner integrations must use mutual TLS in addition to OAuth 2.0.",
+        "Customer data must be retained for 7 years after the end of the customer contract. Application logs must be retained for 12 months. Database backups must be retained for no longer than 35 days. Financial records must be retained for 10 years."
+      ],
+      "reference": "Up to 3 days per week with manager approval (HR-POL-007).",
+      "expected_facts": [
+        "3 days per week"
+      ],
+      "stale_facts": [
+        "2 days per week"
+      ],
+      "expected_conflict": "resolved:HR-POL-007",
+      "expects_recovery": false,
+      "recovery_triggered": false,
+      "retrieval_outcome": "initial_sufficient",
+      "conflicts": [
+        {
+          "resolved": true,
+          "winner": "HR-POL-007"
+        }
+      ],
+      "citations_total": 1,
+      "citations_valid": 1,
+      "claims_total": 1,
+      "claims_supported": 1,
+      "latency_ms": 8368.5,
+      "error": null
+    },
+    {
+      "item_id": "Q21",
+      "category": "unanswerable",
+      "configuration": "improved",
+      "question": "What is the company's maternity leave policy?",
+      "answer": "I couldn't verify information about maternity leave from the available documents. After retrieval recovery, no indexed document appears to cover this topic. Please consult the appropriate policy owner (for example HR, Legal or Information Security) or the authoritative source.",
+      "abstained": true,
+      "should_abstain": true,
+      "relevant_doc_ids": [],
+      "retrieved_doc_ids": [
+        "LEG-POL-003",
+        "HR-POL-007",
+        "HR-POL-007-V1"
+      ],
+      "contexts": [
+        "This policy defines how long the company keeps business records and when they are deleted.",
+        "This policy defines how employees may work from home and connect to company resources. It replaces version 1.0 of the Remote Work Policy, which is no longer in force.",
+        "Employees may work from home up to 2 days per week with manager approval.",
+        "This policy sets out the rules for employees who work from home.",
+        "Employees may work from home up to 3 days per week with manager approval. Employees must be available during core hours from 10:00 to 15:00 local time on remote days. Working from outside the home country requires prior approval from Human Resources and is limited to 30 days per year.",
+        "Customer data must be retained for 7 years after the end of the customer contract. Application logs must be retained for 12 months. Database backups must be retained for no longer than 35 days. Financial records must be retained for 10 years."
+      ],
+      "reference": null,
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": true,
+      "retrieval_outcome": "not_in_corpus",
+      "conflicts": [],
+      "citations_total": 0,
+      "citations_valid": 0,
+      "claims_total": 0,
+      "claims_supported": 0,
+      "latency_ms": 549.2,
+      "error": null
+    },
+    {
+      "item_id": "Q22",
+      "category": "unanswerable",
+      "configuration": "improved",
+      "question": "How are travel expenses reimbursed?",
+      "answer": "I couldn't verify information about travel expenses reimbursed from the available documents. After retrieval recovery, no indexed document appears to cover this topic. Please consult the appropriate policy owner (for example HR, Legal or Information Security) or the authoritative source.",
+      "abstained": true,
+      "should_abstain": true,
+      "relevant_doc_ids": [],
+      "retrieved_doc_ids": [
+        "SEC-STD-004",
+        "TECH-DB-002",
+        "ORG-REG-001",
+        "SRE-STD-010",
+        "TECH-API-002",
+        "PROC-SEC-002"
+      ],
+      "contexts": [
+        "Production database accounts are read-only by default. Write access requires an approved change ticket and expires after 4 hours. All production database sessions are recorded and retained for audit. Production database access is reviewed quarterly by Information Security.",
+        "Atlas backups are taken nightly and kept for 35 days. Point-in-time recovery is available for the previous 7 days.",
+        "Human Resources owns the Remote Work Policy. Information Security owns the Information Security Policy, the Production Database Access Standard and the Network Security Guidelines. Platform Engineering owns the API Authentication Standard. Legal & Compliance owns the Data Retention Policy. Site Reliability Engineering owns the Logging and Monitoring Standard. IT Operations owns the Remote Access Standard.",
+        "All services must send application logs to the central logging platform. Application logs are retained for 90 days and then deleted. Logs must not contain passwords, access tokens or payment card numbers.",
+        "This standard governs authentication for every service exposed through the Public API Gateway. This standard implements the credential requirements of the Information Security Policy.",
+        "This procedure defines how security incidents are reported, triaged and closed. This procedure depends on the Information Security Policy."
+      ],
+      "reference": null,
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": true,
+      "retrieval_outcome": "not_in_corpus",
+      "conflicts": [],
+      "citations_total": 0,
+      "citations_valid": 0,
+      "claims_total": 0,
+      "claims_supported": 0,
+      "latency_ms": 344.5,
+      "error": null
+    },
+    {
+      "item_id": "Q23",
+      "category": "unanswerable",
+      "configuration": "improved",
+      "question": "What is the dress code for the office?",
+      "answer": "I couldn't find sufficient evidence about dress code office in the indexed documents, even after retrieval recovery. Please consult the appropriate source.",
+      "abstained": true,
+      "should_abstain": true,
+      "relevant_doc_ids": [],
+      "retrieved_doc_ids": [
+        "SEC-GDL-009",
+        "TECH-API-002",
+        "IT-STD-015",
+        "SEC-POL-001",
+        "HR-POL-007-V1"
+      ],
+      "contexts": [
+        "Production systems must be isolated from the office network.",
+        "This standard governs authentication for every service exposed through the Public API Gateway. This standard implements the credential requirements of the Information Security Policy.",
+        "This standard governs remote connections to the corporate network through the Corporate VPN.",
+        "Passwords must contain at least 14 characters. Client secrets must be stored in the approved secrets manager and must never be committed to source code.",
+        "This policy sets out the rules for employees who work from home.",
+        "Employees may work from home up to 2 days per week with manager approval."
+      ],
+      "reference": null,
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": true,
+      "retrieval_outcome": "insufficient_after_recovery",
+      "conflicts": [],
+      "citations_total": 0,
+      "citations_valid": 0,
+      "claims_total": 0,
+      "claims_supported": 0,
+      "latency_ms": 348.1,
+      "error": null
+    },
+    {
+      "item_id": "Q24",
+      "category": "unanswerable",
+      "configuration": "improved",
+      "question": "What is the bonus structure for the sales team?",
+      "answer": "I couldn't verify information about bonus structure sales team from the available documents. After retrieval recovery, no indexed document appears to cover this topic. Please consult the appropriate policy owner (for example HR, Legal or Information Security) or the authoritative source.",
+      "abstained": true,
+      "should_abstain": true,
+      "relevant_doc_ids": [],
+      "retrieved_doc_ids": [
+        "TECH-DB-002",
+        "SEC-POL-001",
+        "SRE-STD-010",
+        "PROC-PART-003",
+        "SEC-GDL-009"
+      ],
+      "contexts": [
+        "Atlas is a production database cluster that stores customer orders for the Order Management Service. The Atlas Cluster runs PostgreSQL 15 across three availability zones. Platform Engineering owns the Atlas Cluster.",
+        "Access to production systems must follow the principle of least privilege. Multi-factor authentication is required for all access to production systems. User access to production systems must be reviewed quarterly by the system owner. Shared accounts are prohibited on production systems.",
+        "Every production service must define availability alerts before launch.",
+        "Business Development owns the Partner Integration Onboarding Procedure.",
+        "Production systems must be isolated from the office network.",
+        "1. Business Development records the partner agreement in the partner register. 2. Platform Engineering creates an OAuth 2.0 client for the partner in the Public API Gateway. 3. The partner receives its client secret through the secure credential portal. 4. Platform Engineering issues a mutual TLS certificate to the partner. 5. The partner completes a test integration in the sandbox environment within 10 business days."
+      ],
+      "reference": null,
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": true,
+      "retrieval_outcome": "not_in_corpus",
+      "conflicts": [],
+      "citations_total": 0,
+      "citations_valid": 0,
+      "claims_total": 0,
+      "claims_supported": 0,
+      "latency_ms": 370.3,
+      "error": null
+    },
+    {
+      "item_id": "Q25",
+      "category": "unsupported_trigger",
+      "configuration": "improved",
+      "question": "What is the maximum storage capacity of the Atlas cluster?",
+      "answer": "I couldn't verify an answer. Indexed documents mention Atlas Cluster, but none of the passages I found establishes what you asked, even after graph-based recovery. Please consult the document owner or rephrase the question.",
+      "abstained": true,
+      "should_abstain": true,
+      "relevant_doc_ids": [],
+      "retrieved_doc_ids": [
+        "TECH-DB-002",
+        "SEC-STD-004",
+        "ORG-REG-001"
+      ],
+      "contexts": [
+        "Atlas is a production database cluster that stores customer orders for the Order Management Service. The Atlas Cluster runs PostgreSQL 15 across three availability zones. Platform Engineering owns the Atlas Cluster.",
+        "This standard governs human access to every production database. This standard implements the Information Security Policy for database workloads.",
+        "Access to a production database requires an approved access request in ServiceDesk. Multi-factor authentication is required for every production database session. Engineers must connect to a production database only through the Bastion Host. Direct connections from laptops to a production database are prohibited.",
+        "Production database accounts are read-only by default. Write access requires an approved change ticket and expires after 4 hours. All production database sessions are recorded and retained for audit. Production database access is reviewed quarterly by Information Security.",
+        "Platform Engineering owns the Atlas Cluster, the Public API Gateway and the Customer Data Platform. IT Operations owns the Corporate VPN and the Identity Provider. Information Security owns the Bastion Host.",
+        "Atlas backups are taken nightly and kept for 35 days. Point-in-time recovery is available for the previous 7 days."
+      ],
+      "reference": null,
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": true,
+      "retrieval_outcome": "documents_without_answer",
+      "conflicts": [],
+      "citations_total": 0,
+      "citations_valid": 0,
+      "claims_total": 0,
+      "claims_supported": 0,
+      "latency_ms": 738.7,
+      "error": null
+    },
+    {
+      "item_id": "Q26",
+      "category": "unsupported_trigger",
+      "configuration": "improved",
+      "question": "How many failed login attempts lock a VPN account?",
+      "answer": "I couldn't verify an answer. Indexed documents mention Corporate VPN, but none of the passages I found establishes what you asked, even after graph-based recovery. Please consult the document owner or rephrase the question.",
+      "abstained": true,
+      "should_abstain": true,
+      "relevant_doc_ids": [],
+      "retrieved_doc_ids": [
+        "IT-STD-015",
+        "SEC-GDL-009",
+        "HR-POL-007",
+        "HR-POL-007-V1",
+        "TECH-API-002"
+      ],
+      "contexts": [
+        "VPN sessions are disconnected after 60 minutes of inactivity. The Corporate VPN client must be updated within 14 days of a new release.",
+        "VPN sessions must be disconnected after 15 minutes of inactivity. Split tunnelling is not permitted on corporate VPN connections.",
+        "Employees must use a company-managed laptop for all remote work. Personal devices are prohibited for remote access to internal systems. All remote connections must use the Corporate VPN with multi-factor authentication.",
+        "Employees may use personal devices for remote access to internal systems. Remote connections must use the Corporate VPN.",
+        "Each client is limited to 600 requests per minute by default.",
+        "This standard governs remote connections to the corporate network through the Corporate VPN."
+      ],
+      "reference": null,
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": true,
+      "retrieval_outcome": "documents_without_answer",
+      "conflicts": [],
+      "citations_total": 0,
+      "citations_valid": 0,
+      "claims_total": 0,
+      "claims_supported": 0,
+      "latency_ms": 432.6,
+      "error": null
+    },
+    {
+      "item_id": "Q27",
+      "category": "unsupported_trigger",
+      "configuration": "improved",
+      "question": "What is the penalty for violating the Remote Work Policy?",
+      "answer": "I couldn't verify an answer. Indexed documents mention Remote Work Policy, but none of the passages I found establishes what you asked, even after graph-based recovery. Please consult the document owner or rephrase the question.",
+      "abstained": true,
+      "should_abstain": true,
+      "relevant_doc_ids": [],
+      "retrieved_doc_ids": [
+        "HR-POL-007",
+        "HR-POL-007-V1"
+      ],
+      "contexts": [
+        "Employees must use a company-managed laptop for all remote work. Personal devices are prohibited for remote access to internal systems. All remote connections must use the Corporate VPN with multi-factor authentication.",
+        "Employees may work from home up to 2 days per week with manager approval.",
+        "This policy sets out the rules for employees who work from home.",
+        "This policy defines how employees may work from home and connect to company resources. It replaces version 1.0 of the Remote Work Policy, which is no longer in force.",
+        "Employees may work from home up to 3 days per week with manager approval. Employees must be available during core hours from 10:00 to 15:00 local time on remote days. Working from outside the home country requires prior approval from Human Resources and is limited to 30 days per year.",
+        "Employees may use personal devices for remote access to internal systems. Remote connections must use the Corporate VPN."
+      ],
+      "reference": null,
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": true,
+      "retrieval_outcome": "documents_without_answer",
+      "conflicts": [],
+      "citations_total": 0,
+      "citations_valid": 0,
+      "claims_total": 0,
+      "claims_supported": 0,
+      "latency_ms": 760.2,
+      "error": null
+    },
+    {
+      "item_id": "Q28",
+      "category": "unsupported_trigger",
+      "configuration": "improved",
+      "question": "Which encryption algorithm does the Public API Gateway use to sign tokens?",
+      "answer": "I couldn't verify an answer. Indexed documents mention Public API Gateway, but none of the passages I found establishes what you asked, even after graph-based recovery. Please consult the document owner or rephrase the question.",
+      "abstained": true,
+      "should_abstain": true,
+      "relevant_doc_ids": [],
+      "retrieved_doc_ids": [
+        "TECH-API-002",
+        "PROC-PART-003",
+        "ORG-REG-001"
+      ],
+      "contexts": [
+        "This standard governs authentication for every service exposed through the Public API Gateway. This standard implements the credential requirements of the Information Security Policy.",
+        "All API clients must authenticate with OAuth 2.0 using the client credentials flow. Access tokens expire after 60 minutes. Static API keys are prohibited for new integrations. Client secrets must be rotated every 90 days. Partner integrations must use mutual TLS in addition to OAuth 2.0.",
+        "This procedure describes how a new external partner is connected to the Public API Gateway. This procedure depends on the API Authentication Standard.",
+        "Platform Engineering owns the Atlas Cluster, the Public API Gateway and the Customer Data Platform. IT Operations owns the Corporate VPN and the Identity Provider. Information Security owns the Bastion Host.",
+        "1. Business Development records the partner agreement in the partner register. 2. Platform Engineering creates an OAuth 2.0 client for the partner in the Public API Gateway. 3. The partner receives its client secret through the secure credential portal. 4. Platform Engineering issues a mutual TLS certificate to the partner. 5. The partner completes a test integration in the sandbox environment within 10 business days.",
+        "Each client is limited to 600 requests per minute by default."
+      ],
+      "reference": null,
+      "expected_facts": [],
+      "stale_facts": [],
+      "expected_conflict": null,
+      "expects_recovery": false,
+      "recovery_triggered": true,
+      "retrieval_outcome": "documents_without_answer",
+      "conflicts": [],
+      "citations_total": 0,
+      "citations_valid": 0,
+      "claims_total": 0,
+      "claims_supported": 0,
+      "latency_ms": 438.5,
+      "error": null
+    }
+  ]
+}

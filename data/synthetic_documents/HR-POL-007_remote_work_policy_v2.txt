@@ -1,0 +1,29 @@
+---
+document_id: HR-POL-007
+title: Remote Work Policy
+doc_type: policy
+department: Human Resources
+version: 2.0
+publication_date: 2024-02-10
+effective_date: 2024-03-01
+status: active
+authority: executive
+supersedes: HR-POL-007-V1
+depends_on: SEC-POL-001
+applies_to: Remote Work
+---
+# 1. Purpose
+This policy defines how employees may work from home and connect to company resources. It replaces version 1.0 of the Remote Work Policy, which is no longer in force.
+
+# 2. Eligibility and Schedule
+Employees may work from home up to 3 days per week with manager approval.
+Employees must be available during core hours from 10:00 to 15:00 local time on remote days.
+Working from outside the home country requires prior approval from Human Resources and is limited to 30 days per year.
+
+# 3. Devices and Remote Access
+Employees must use a company-managed laptop for all remote work.
+Personal devices are prohibited for remote access to internal systems.
+All remote connections must use the Corporate VPN with multi-factor authentication.
+
+# 4. Related Documents
+This policy depends on the Information Security Policy.

@@ -1,0 +1,27 @@
+---
+document_id: SEC-STD-004
+title: Production Database Access Standard
+doc_type: standard
+department: Information Security
+version: 1.2
+publication_date: 2024-04-15
+effective_date: 2024-05-01
+status: active
+authority: department
+governs: Production Database
+depends_on: SEC-POL-001
+---
+# 1. Scope
+This standard governs human access to every production database. This standard implements the Information Security Policy for database workloads.
+
+# 2. Access Requirements
+Access to a production database requires an approved access request in ServiceDesk.
+Multi-factor authentication is required for every production database session.
+Engineers must connect to a production database only through the Bastion Host.
+Direct connections from laptops to a production database are prohibited.
+
+# 3. Privileges and Sessions
+Production database accounts are read-only by default.
+Write access requires an approved change ticket and expires after 4 hours.
+All production database sessions are recorded and retained for audit.
+Production database access is reviewed quarterly by Information Security.

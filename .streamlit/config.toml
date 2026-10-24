@@ -1,0 +1,6 @@
+[server]
+# Keep in line with MAX_UPLOAD_MB (API limit, default 10 MB)
+maxUploadSize = 10
+
+[browser]
+gatherUsageStats = false

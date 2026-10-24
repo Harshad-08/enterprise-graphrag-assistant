@@ -1,0 +1,22 @@
+---
+document_id: SRE-STD-010
+title: Logging and Monitoring Standard
+doc_type: standard
+department: Site Reliability Engineering
+version: 1.4
+publication_date: 2024-07-01
+effective_date: 2024-07-15
+status: active
+authority: department
+applies_to: Application Logs; Production Systems
+---
+# 1. Scope
+This standard applies to all services running on production systems.
+
+# 2. Log Collection
+All services must send application logs to the central logging platform.
+Application logs are retained for 90 days and then deleted.
+Logs must not contain passwords, access tokens or payment card numbers.
+
+# 3. Alerting
+Every production service must define availability alerts before launch.

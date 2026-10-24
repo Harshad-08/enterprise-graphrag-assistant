@@ -1,0 +1,30 @@
+---
+document_id: ORG-REG-001
+title: Department Ownership Register
+doc_type: register
+department: Legal & Compliance
+version: 2024.2
+publication_date: 2024-09-01
+effective_date: 2024-09-01
+status: active
+authority: executive
+---
+# 1. Purpose
+This register records which department owns each policy, procedure and core system.
+
+# 2. Policy Ownership
+Human Resources owns the Remote Work Policy.
+Information Security owns the Information Security Policy, the Production Database Access Standard and the Network Security Guidelines.
+Platform Engineering owns the API Authentication Standard.
+Legal & Compliance owns the Data Retention Policy.
+Site Reliability Engineering owns the Logging and Monitoring Standard.
+IT Operations owns the Remote Access Standard.
+
+# 3. Procedure Ownership
+Information Security owns the Security Incident Response Procedure.
+Business Development owns the Partner Integration Onboarding Procedure.
+
+# 4. System Ownership
+Platform Engineering owns the Atlas Cluster, the Public API Gateway and the Customer Data Platform.
+IT Operations owns the Corporate VPN and the Identity Provider.
+Information Security owns the Bastion Host.

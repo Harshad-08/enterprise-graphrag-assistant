@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-10-24T13:14:12.500266+00:00",
+  "samples": 56,
+  "positive_samples": 40,
+  "label_definition": "answerable AND evidence contains >=1 labelled relevant document",
+  "recommended": {
+    "sufficiency_threshold": 0.75,
+    "min_chunk_relevance": 0.5,
+    "min_concept_coverage": 0.5
+  },
+  "in_sample": {
+    "f1": 0.961,
+    "balanced_accuracy": 0.9625
+  },
+  "leave_one_out_accuracy": 0.9286,
+  "default_parameters_in_sample": {
+    "f1": 0.961,
+    "balanced_accuracy": 0.9625
+  },
+  "top_5": [
+    {
+      "params": {
+        "sufficiency_threshold": 0.75,
+        "min_chunk_relevance": 0.5,
+        "min_concept_coverage": 0.5
+      },
+      "f1": 0.961,
+      "balanced_accuracy": 0.9625
+    },
+    {
+      "params": {
+        "sufficiency_threshold": 0.75,
+        "min_chunk_relevance": 0.5,
+        "min_concept_coverage": 0.34
+      },
+      "f1": 0.961,
+      "balanced_accuracy": 0.9625
+    },
+    {
+      "params": {
+        "sufficiency_threshold": 0.7,
+        "min_chunk_relevance": 0.5,
+        "min_concept_coverage": 0.5
+      },
+      "f1": 0.961,
+      "balanced_accuracy": 0.9625
+    },
+    {
+      "params": {
+        "sufficiency_threshold": 0.7,
+        "min_chunk_relevance": 0.5,
+        "min_concept_coverage": 0.34
+      },
+      "f1": 0.961,
+      "balanced_accuracy": 0.9625
+    },
+    {
+      "params": {
+        "sufficiency_threshold": 0.65,
+        "min_chunk_relevance": 0.5,
+        "min_concept_coverage": 0.5
+      },
+      "f1": 0.961,
+      "balanced_accuracy": 0.9625
+    }
+  ],
+  "misclassified_with_recommended": [
+    "Q10:initial",
+    "Q11:initial",
+    "Q16:initial"
+  ],
+  "caveat": "Small synthetic dataset; thresholds may not transfer to a different corpus. Re-run after changing documents or models."
+}

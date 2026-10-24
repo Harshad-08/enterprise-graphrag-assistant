@@ -1,0 +1,24 @@
+---
+document_id: LEG-POL-003
+title: Data Retention Policy
+doc_type: policy
+department: Legal & Compliance
+version: 3.0
+publication_date: 2023-09-01
+effective_date: 2023-10-01
+status: active
+authority: executive
+applies_to: Customer Data; Application Logs; Backups
+---
+# 1. Purpose
+This policy defines how long the company keeps business records and when they are deleted.
+
+# 2. Retention Periods
+Customer data must be retained for 7 years after the end of the customer contract.
+Application logs must be retained for 12 months.
+Database backups must be retained for no longer than 35 days.
+Financial records must be retained for 10 years.
+
+# 3. Deletion
+Customer deletion requests must be completed within 30 days of verification.
+Data that has reached the end of its retention period must be securely deleted.

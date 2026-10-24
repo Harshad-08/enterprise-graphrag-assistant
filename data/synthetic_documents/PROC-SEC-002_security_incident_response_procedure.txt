@@ -1,0 +1,27 @@
+---
+document_id: PROC-SEC-002
+title: Security Incident Response Procedure
+doc_type: procedure
+department: Information Security
+version: 2.3
+publication_date: 2024-02-01
+effective_date: 2024-02-01
+status: active
+authority: department
+depends_on: SEC-POL-001
+applies_to: Production Systems
+---
+# 1. Purpose
+This procedure defines how security incidents are reported, triaged and closed. This procedure depends on the Information Security Policy.
+
+# 2. Reporting
+All suspected security incidents must be reported within 1 hour of discovery through the security hotline or ServiceDesk.
+The on-call security analyst assigns a severity level between 1 and 4 to every reported incident.
+
+# 3. Severity and Escalation
+For Severity 1 incidents, the Chief Information Security Officer must be notified within 15 minutes.
+Site Reliability Engineering leads containment for incidents affecting production systems.
+
+# 4. Closure
+A postmortem must be completed within 5 business days after a Severity 1 incident is resolved.
+Information Security owns the Security Incident Response Procedure.

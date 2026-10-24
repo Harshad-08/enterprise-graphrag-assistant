@@ -1,0 +1,24 @@
+---
+document_id: PROC-PART-003
+title: Partner Integration Onboarding Procedure
+doc_type: procedure
+department: Business Development
+version: 1.1
+publication_date: 2024-03-05
+effective_date: 2024-03-15
+status: active
+authority: department
+depends_on: TECH-API-002
+---
+# 1. Purpose
+This procedure describes how a new external partner is connected to the Public API Gateway. This procedure depends on the API Authentication Standard.
+
+# 2. Steps
+1. Business Development records the partner agreement in the partner register.
+2. Platform Engineering creates an OAuth 2.0 client for the partner in the Public API Gateway.
+3. The partner receives its client secret through the secure credential portal.
+4. Platform Engineering issues a mutual TLS certificate to the partner.
+5. The partner completes a test integration in the sandbox environment within 10 business days.
+
+# 3. Ownership
+Business Development owns the Partner Integration Onboarding Procedure.

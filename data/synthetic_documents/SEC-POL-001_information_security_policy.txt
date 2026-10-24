@@ -1,0 +1,31 @@
+---
+document_id: SEC-POL-001
+title: Information Security Policy
+doc_type: policy
+department: Information Security
+version: 3.1
+publication_date: 2023-11-20
+effective_date: 2024-01-01
+status: active
+authority: executive
+governs: Production Systems; Customer Data Platform
+applies_to: Contractors
+---
+# 1. Purpose and Scope
+This policy establishes the baseline security requirements for all employees and contractors. This policy governs all production systems and the Customer Data Platform.
+
+# 2. Access Control
+Access to production systems must follow the principle of least privilege.
+Multi-factor authentication is required for all access to production systems.
+User access to production systems must be reviewed quarterly by the system owner.
+Shared accounts are prohibited on production systems.
+
+# 3. Credentials
+Passwords must contain at least 14 characters.
+Client secrets must be stored in the approved secrets manager and must never be committed to source code.
+
+# 4. Incident Reporting
+Security incidents must be reported to Information Security within 1 hour of discovery.
+
+# 5. Data Protection
+Customer data must be encrypted at rest and in transit.

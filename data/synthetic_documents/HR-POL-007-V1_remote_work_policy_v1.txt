@@ -1,0 +1,21 @@
+---
+document_id: HR-POL-007-V1
+title: Remote Work Policy
+doc_type: policy
+department: Human Resources
+version: 1.0
+publication_date: 2021-01-15
+effective_date: 2021-02-01
+status: superseded
+authority: department
+applies_to: Remote Work
+---
+# 1. Purpose
+This policy sets out the rules for employees who work from home.
+
+# 2. Eligibility
+Employees may work from home up to 2 days per week with manager approval.
+
+# 3. Devices and Remote Access
+Employees may use personal devices for remote access to internal systems.
+Remote connections must use the Corporate VPN.

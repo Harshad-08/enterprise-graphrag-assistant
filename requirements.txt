@@ -1,0 +1,48 @@
+# Versions verified together on Python 3.13 (macOS arm64). See README "Dependency notes".
+
+# API
+fastapi==0.162.0
+uvicorn[standard]==0.54.0
+pydantic==2.14.1
+python-multipart==0.0.32
+python-dotenv==1.2.4
+
+# Graph database
+neo4j==6.4.1
+
+# Retrieval / models
+torch==2.14.1
+sentence-transformers==6.2.0
+transformers==5.20.2
+sentencepiece==0.2.2
+protobuf==7.36.2
+rank-bm25==0.2.2
+numpy==2.5.4
+
+# LLM
+groq==1.7.0
+google-genai==2.33.0
+
+# Document processing
+pymupdf==2.0
+python-docx==1.2.0
+
+# Evaluation. ragas 0.4.3 still imports langchain_community.chat_models.vertexai, which was
+# removed in langchain-community 0.4, so the langchain 0.3 line is pinned here.
+ragas==0.4.3
+langchain==0.3.30
+langchain-core==0.3.86
+langchain-community==0.3.31
+langchain-openai==0.3.35
+# ragas' llm_factory needs a recent instructor (Provider.GENAI etc.); openai<3 for langchain-openai
+instructor==1.17.0
+openai==2.54.0
+
+# Frontend
+streamlit==1.66.1
+requests==2.34.2
+pandas==3.1.0
+
+# Tests
+pytest==9.1.1
+httpx==0.28.1

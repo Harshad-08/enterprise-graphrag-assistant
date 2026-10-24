@@ -1,0 +1,19 @@
+---
+document_id: SEC-GDL-009
+title: Network Security Guidelines
+doc_type: guideline
+department: Information Security
+version: 1.0
+publication_date: 2024-08-12
+status: active
+authority: department
+---
+# 1. Purpose
+These guidelines describe baseline network protections for corporate and remote connections.
+
+# 2. Remote Connections
+VPN sessions must be disconnected after 15 minutes of inactivity.
+Split tunnelling is not permitted on corporate VPN connections.
+
+# 3. Network Segmentation
+Production systems must be isolated from the office network.

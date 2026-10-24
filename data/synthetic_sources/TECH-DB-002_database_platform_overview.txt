@@ -1,0 +1,23 @@
+---
+document_id: TECH-DB-002
+title: Database Platform Overview
+doc_type: technical
+department: Platform Engineering
+version: 4.0
+publication_date: 2024-06-01
+effective_date: 2024-06-01
+status: active
+authority: team
+related: Atlas Cluster | RELATED_TO | Production Database
+---
+1. Atlas Overview
+Atlas is a production database cluster that stores customer orders for the Order Management Service. The Atlas Cluster runs PostgreSQL 15 across three availability zones. Platform Engineering owns the Atlas Cluster.
+
+2. Architecture
+Atlas uses one primary node and two synchronous replicas. Failover to a replica completes in under 60 seconds. Connection pooling for Atlas is handled by PgBouncer.
+=== PAGE BREAK ===
+3. Backups and Recovery
+Atlas backups are taken nightly and kept for 35 days. Point-in-time recovery is available for the previous 7 days.
+
+4. Monitoring
+Atlas metrics are exported to the central monitoring stack. Site Reliability Engineering is paged when replication lag exceeds 30 seconds.

@@ -1,0 +1,22 @@
+---
+document_id: IT-STD-015
+title: Remote Access Standard
+doc_type: standard
+department: IT Operations
+version: 1.0
+publication_date: 2024-05-20
+effective_date: 2024-06-01
+status: active
+authority: department
+governs: Corporate VPN
+depends_on: HR-POL-007
+---
+# 1. Scope
+This standard governs remote connections to the corporate network through the Corporate VPN.
+
+# 2. VPN Sessions
+VPN sessions are disconnected after 60 minutes of inactivity.
+The Corporate VPN client must be updated within 14 days of a new release.
+
+# 3. Personal Devices
+Personal devices are permitted for remote access only when accessing the webmail portal through a browser.

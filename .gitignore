@@ -1,0 +1,29 @@
+# Secrets
+.env
+*.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Runtime data
+data/uploads/
+data/evaluation/results/*
+!data/evaluation/results/.gitkeep
+# Keep the report cited in the README
+!data/evaluation/results/groq_generation_report.json
+data/evaluation/results/ragas_checkpoint.jsonl
+neo4j_data/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/

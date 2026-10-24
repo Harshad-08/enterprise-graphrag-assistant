@@ -1,0 +1,86 @@
+"""Storage interface implemented by the Neo4j store and the in-memory test store.
+
+Both implementations hold the same graph model:
+
+    (Document)-[:CONTAINS]->(Chunk)            chunk text + embedding
+    (Document)-[:CONTAINS]->(Claim)-[:EXTRACTED_FROM]->(Chunk)
+    (Claim)-[:REFERS_TO]->(Entity)
+    (Chunk)-[:MENTIONS]->(Entity)
+    (Document)-[:DEFINES]->(Policy|Procedure)
+    (Entity)-[:GOVERNS|APPLIES_TO|DEPENDS_ON|OWNED_BY|RELATED_TO]->(Entity)
+    (Document)-[:SUPERSEDES]->(Document)
+    (Claim)-[:CONTRADICTS|SUPPORTS]->(Claim)
+"""
+
+from __future__ import annotations
+
+from typing import Any, Protocol
+
+import numpy as np
+
+from app.models.schemas import (
+    Chunk,
+    Claim,
+    DocumentMetadata,
+    DocumentRecord,
+    Entity,
+    GraphPath,
+    Mention,
+    Relation,
+)
+
+
+class GraphStoreError(RuntimeError):
+    """Raised when the graph backend is unavailable or a query fails."""
+
+
+class GraphStore(Protocol):
+    backend_name: str
+
+    def verify_connectivity(self) -> bool: ...
+    def setup_schema(self, embedding_dimension: int) -> None: ...
+    def clear(self) -> None: ...
+
+    def upsert_document(
+        self,
+        metadata: DocumentMetadata,
+        chunks: list[Chunk],
+        embeddings: np.ndarray,
+        entities: list[Entity],
+        relations: list[Relation],
+        mentions: list[Mention],
+        claims: list[Claim],
+        defines: Entity | None,
+    ) -> None: ...
+    def upsert_relations(self, entities: list[Entity], relations: list[Relation]) -> None: ...
+    def set_supersessions(self, edges: list[tuple[str, str]]) -> None: ...
+    def delete_document(self, document_id: str) -> bool: ...
+
+    def list_documents(self) -> list[DocumentRecord]: ...
+    def get_document(self, document_id: str) -> DocumentRecord | None: ...
+    def get_documents_metadata(self, document_ids: list[str]) -> dict[str, DocumentMetadata]: ...
+    def all_chunks(self) -> list[Chunk]: ...
+    def get_chunks(self, chunk_ids: list[str]) -> list[Chunk]: ...
+    def chunks_for_documents(self, document_ids: list[str], limit: int) -> list[Chunk]: ...
+    def chunks_mentioning(self, entity_ids: list[str], limit: int) -> list[Chunk]: ...
+    def relation_chunks(self, entity_ids: list[str], limit: int) -> list[Chunk]: ...
+    def vector_search(
+        self, embedding: np.ndarray, k: int, filters: dict[str, Any] | None = None
+    ) -> list[tuple[Chunk, float]]: ...
+
+    def all_entities(self) -> list[Entity]: ...
+    def get_entities(self, entity_ids: list[str]) -> list[Entity]: ...
+    def traverse(self, seed_ids: list[str], max_hops: int, limit: int = 200) -> list[GraphPath]: ...
+
+    def all_claims(self) -> list[Claim]: ...
+    def claims_for_chunks(self, chunk_ids: list[str]) -> list[Claim]: ...
+    def claims_for_subjects(self, subject_property_pairs: list[tuple[str, str]]) -> list[Claim]: ...
+    def upsert_claim_relations(self, relations: list[dict[str, Any]]) -> None: ...
+    def claim_relations(self, claim_ids: list[str] | None = None) -> list[dict[str, Any]]: ...
+    def supersession_edges(self) -> list[tuple[str, str]]: ...
+
+    def stats(self) -> dict[str, int]: ...
+
+
+TRAVERSABLE_RELATIONSHIPS = ("GOVERNS", "APPLIES_TO", "DEPENDS_ON", "OWNED_BY", "RELATED_TO")
+CLAIM_RELATIONSHIPS = ("CONTRADICTS", "SUPPORTS", "RELATED_TO")

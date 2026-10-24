@@ -1,0 +1,13 @@
+{
+  "description": "Corpus-level gold labels for contradiction detection and conflict resolution. A detected contradiction matches a gold pair when it involves the same two documents and the same subject. expected_resolution is the winning document ID or 'unresolved'. compatible_pairs must NOT be reported as contradictions.",
+  "contradictions": [
+    {"documents": ["HR-POL-007", "HR-POL-007-V1"], "subject": "Remote Work", "property": "remote_work_days", "expected_resolution": "HR-POL-007", "expected_rule": "supersession"},
+    {"documents": ["HR-POL-007", "HR-POL-007-V1"], "subject": "Personal Devices", "property": "remote_access", "expected_resolution": "HR-POL-007", "expected_rule": "supersession"},
+    {"documents": ["LEG-POL-003", "SRE-STD-010"], "subject": "Application Logs", "property": "retention_period", "expected_resolution": "LEG-POL-003", "expected_rule": "authority"},
+    {"documents": ["IT-STD-015", "SEC-GDL-009"], "subject": "VPN Sessions", "property": "session_timeout", "expected_resolution": "unresolved", "expected_rule": null}
+  ],
+  "compatible_pairs": [
+    {"documents": ["HR-POL-007", "IT-STD-015"], "subject": "Personal Devices", "reason": "General prohibition vs. narrowly conditioned webmail exception."},
+    {"documents": ["PROC-SEC-002", "SEC-POL-001"], "subject": "Security Incidents", "reason": "Both require reporting within 1 hour (supporting claims)."}
+  ]
+}

@@ -1,0 +1,13 @@
+[project]
+name = "enterprise-graphrag-assistant"
+version = "1.0.0"
+description = "Enterprise Knowledge Assistant with reliability-focused GraphRAG"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::FutureWarning",
+]
